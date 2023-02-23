@@ -16,12 +16,14 @@ class Ray_cast
         return m_pRay_cast;
         }
         void update();
+        double get_h(){ return h;}
     private:
         static Ray_cast* m_pRay_cast;
         Ray_cast(){};
         ~Ray_cast(){};
         const double view_angle=60;
-        double ox,oy,angle=0,View_Limitation=5;
+        double ox,oy,angle=0,View_Limitation=15;
+        double h=3;//chieu cao camera
 };
 typedef Ray_cast TheRay_cast;
 #endif // RAY_CAST_H
