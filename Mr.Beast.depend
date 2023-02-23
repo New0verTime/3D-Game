@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1677156208 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\main.cpp
+	<SDL.h>
+	"Game.h"
+
+1677158474 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
+	"SDL.h"
+	"SDL_ttf.h"
+	"map.h"
+	<string>
+	<vector>
+
+1677093761 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\texturemanager.cpp
+	"TextureManager.h"
+	<SDL_image.h>
+	<string>
+
+1677093762 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\texturemanager.h
+	<string>
+	<SDL.h>
+	<map>
+
+1677163137 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
+	"Game.h"
+	"Player.h"
+	"TextureManager.h"
+	"Ray_cast.h"
+	<SDL_ttf.h>
+	<iostream>
+	<cstdlib>
+	<string>
+	<fstream>
+	<vector>
+
+1677085788 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\map.h
+	<iostream>
+	<vector>
+	<string>
+
+1677085828 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\map.cpp
+	"map.h"
+	<iostream>
+	<fstream>
+	<string>
+
+1677092611 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\player.cpp
+	"Player.h"
+
+1677162226 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
+	"TextureManager.h"
+	"Game.h"
+	<iostream>
+	<string>
+	<math.h>
+	<SDL.h>
+
+1677163097 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
+	"Ray_cast.h"
+	<iostream>
+
+1677162200 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\ray_cast.h
+	<SDL.h>
+	"Player.h"
+	"Game.h"
+	<iostream>
+

@@ -1,0 +1,122 @@
+#ifndef RAY_CAST_H
+#define RAY_CAST_H
+#include<SDL.h>
+#include"Player.h"
+#include"Game.h"
+#include<iostream>
+class Ray_cast
+{
+    public:
+        static Ray_cast* Instance(){
+        if(m_pRay_cast==0) m_pRay_cast=new(Ray_cast);
+        return m_pRay_cast;
+        }
+        void update(){
+        ox=Player::Instance()->getPosx()/50;
+        oy=Player::Instance()->getPosy()/50;
+        angle=Player::Instance()->getAngle();
+        SDL_SetRenderDrawColor(TheGame::Instance()->getRenderer(),255,255,255,255);
+        for(double i=angle-view_angle/2;i<=angle+view_angle/2;i+=0.5){
+            if(i>180) i-=360;
+            if(i<-180) i+=360;
+            //std::cout<<i<<std::endl;
+            double lx=std::cos(i/57.2958)*View_Limitation+ox,ly=std::sin(i/57.2958)*View_Limitation+oy,delta_depth,depth_vert,depth_hor,x1,y1,x2,y2;
+            if(lx>ox)
+            for(int j=std::ceil(ox);j<=int(lx);++j){
+                if(TheGame::Instance()->getMap(j,std::ceil(oy+(j-ox)*std::tan(i)))==1){
+                    x1=j;
+                    y1=oy+(j-ox)*std::tan(i);
+                    break;
+                }
+            }
+            else if(lx<ox)
+            for(int j=int(ox);j>=std::ceil(lx);--j){
+                if(TheGame::Instance()->getMap(j,std::ceil(oy+(j-ox)*std::tan(i))==1){
+                    x1=j;
+                    y1=oy+(j-lx)*std::tan(i);
+                    break;
+                }
+            }
+            if(ly>oy)
+            for(int j=std::ceil(oy);j<=int(ly);++j){
+                if(TheGame::Instance()->getMap(int(ox+(j-oy)*std::cot(i)),j)==1){
+                    x2=ox+(j-oy)*std::cot(i);
+                    y2=j;
+                    break;
+                }
+            }
+            else if(ly<oy)
+            for(int j=int(oy);j>=std::ceil(ly);--j){
+                if(TheGame::Instance()->getMap(int(ox+(j-oy)*std::cot(i)),j)==1){
+                    x2=ox+(j-oy)*std::cot(i);
+                    y2=j;
+                    break;
+                }
+            }
+        }
+        }
+    private:
+        static Ray_cast* m_pRay_cast;
+        Ray_cast(){};
+        ~Ray_cast(){};
+        const double view_angle=60;
+        double ox,oy,angle,View_Limitation=15;
+};
+typedef Ray_cast TheRay_cast;
+#endif // RAY_CAST_H
+
+
+#include "Ray_cast.h"
+Ray_cast* Ray_cast::m_pRay_cast=0;
+
+
+this->ox=Player::Instance()->getPosx()/50;
+        this->oy=Player::Instance()->getPosy()/50;
+        this->angle=Player::Instance()->getAngle();
+        SDL_SetRenderDrawColor(TheGame::Instance()->getRenderer(),255,255,255,255);
+        for(double i=this->angle-this->view_angle/2;i<=this->angle+this->view_angle/2;i+=0.5){
+            if(i>180) i-=360;
+            if(i<-180) i+=360;
+            double lx=std::cos(i/57.2958)*View_Limitation+ox,ly=std::sin(i/57.2958)*View_Limitation+oy,x1,y1,x2,y2;
+            if(lx>ox){
+            for(int j=std::ceil(ox);j<=int(lx);++j){
+                if(TheGame::Instance()->getMap(j,std::ceil(oy+(j-ox)*std::tan(i)))==1){
+                    x1=j;
+                    y1=oy+(j-ox)*std::tan(i);
+                    break;
+                }
+            }
+            }
+            else if(lx<ox){
+            for(int j=int(ox);j>=std::ceil(lx);--j){
+                if(TheGame::Instance()->getMap(j,std::ceil(oy+(j-ox)*std::tan(i))==1){
+                    x1=j;
+                    y1=oy+(j-lx)*std::tan(i);
+                    break;
+                }
+            }
+            }
+            if(ly>oy){
+            for(int j=std::ceil(oy);j<=int(ly);++j){
+                if(TheGame::Instance()->getMap(int(ox+(j-oy)*std::cot(i)),j)==1){
+                    x2=ox+(j-oy)*std::cot(i);
+                    y2=j;
+                    break;
+                }
+            }
+            }
+            else if(ly<oy){
+            for(int j=int(oy);j>=std::ceil(ly);--j){
+                if(TheGame::Instance()->getMap(int(ox+(j-oy)*std::cot(i)),j)==1){
+                    x2=ox+(j-oy)*std::cot(i);
+                    y2=j;
+                    break;
+                }
+            }
+            }
+            if((x1-x2)(x1-ox)<0){
+                SDL_RenderDrawLine(TheGame::Instance()->getRenderer(),int(Player::Instance()->getPosx()),int(Player::Instance()->getPosy()),x1,y1);
+            }
+            else {SDL_RenderDrawLine(TheGame::Instance()->getRenderer(),int(Player::Instance()->getPosx()),int(Player::Instance()->getPosy()),x2,y2);}
+        }
+        SDL_SetRenderDrawColor(TheGame::Instance()->getRenderer(),0,0,0,255);
