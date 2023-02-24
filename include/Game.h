@@ -23,7 +23,7 @@ public:
     SDL_Texture* str_to_texture(std::string str);
     void clean();
     bool running() { return m_bRunning; }
-    int getMap(int x,int y) {if(y>=0&&y<maps.size()&&x>=0&&x<maps[0].size()) return maps[y][x]; else return 0;}
+    int getMap(int x,int y) {if(y>=0&&y<maps.size()&&x>=0&&x<maps[0].size()) return maps[y][x]; else return 1;}
     SDL_Renderer* getRenderer() {return m_pRenderer;}
 private:
     static Game* m_pGame;

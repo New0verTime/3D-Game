@@ -18,8 +18,7 @@ void Read_map(std::string path,std::vector<std::vector<int>> &maps){
       std::vector<int> tmp;
       int l=line.size();
       for(int i=0;i<l;++i){
-        if(line[i]=='1') tmp.push_back(1);
-        else if(line[i]=='0') tmp.push_back(0);
+        if(line[i]!=' ') tmp.push_back(line[i]-'0');
       }
       maps.push_back(tmp);
     }
@@ -66,27 +65,20 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
     TTF_Init();
     gFont = TTF_OpenFont( "Raleway-Medium.ttf", 28 );
     Read_map("assets/map.txt",maps);
-    TheTextureManager::Instance()->load("assets/1.png","wall",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/1.png","1",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/2.png","2",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/3.png","3",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/4.png","4",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/5.png","5",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/sky.png","sky",m_pRenderer);
     std::cout << "init success\n";
     return true;
 }
 void Game::render()
 {
-SDL_Rect rect;
 SDL_RenderClear(m_pRenderer);
-int m=maps.size(),n=maps[0].size();
-//SDL_SetRenderDrawColor(m_pRenderer, 0, 255, 255, 255);
-//for(int i=0;i<m;++i){
-//    for(int j=0;j<n;++j){
-//        if(maps[i][j]==1) {
-//            rect.x = j*50;
-//            rect.y = i*50;
-//            rect.w = 50;
-//            rect.h = 50;
-//            SDL_RenderDrawRect(m_pRenderer, &rect);
-//        }
-//    }
-//}
+TheTextureManager::Instance()->draw("sky",0,0,1280,360,m_pRenderer);
+SDL_SetRenderDrawColor(m_pRenderer, 0, 255, 255, 255);
 SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 255);
 Player::Instance()->render(m_pRenderer);
 TheRay_cast::Instance()->update();

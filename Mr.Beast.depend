@@ -3,7 +3,7 @@
 	<SDL.h>
 	"Game.h"
 
-1677158474 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
+1677221631 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
 	"SDL.h"
 	"SDL_ttf.h"
 	"map.h"
@@ -20,7 +20,7 @@
 	<SDL.h>
 	<map>
 
-1677183228 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
+1677223712 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
 	"Game.h"
 	"Player.h"
 	"TextureManager.h"
@@ -37,7 +37,7 @@
 	<vector>
 	<string>
 
-1677085828 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\map.cpp
+1677223450 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\map.cpp
 	"map.h"
 	<iostream>
 	<fstream>
@@ -46,7 +46,7 @@
 1677092611 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\player.cpp
 	"Player.h"
 
-1677182899 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
+1677220126 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
 	"TextureManager.h"
 	"Game.h"
 	<iostream>
@@ -54,12 +54,12 @@
 	<math.h>
 	<SDL.h>
 
-1677184572 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
+1677224257 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
 	"Ray_cast.h"
 	"TextureManager.h"
 	<iostream>
 
-1677170883 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\ray_cast.h
+1677221853 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\ray_cast.h
 	<SDL.h>
 	"Player.h"
 	"Game.h"

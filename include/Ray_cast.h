@@ -22,7 +22,7 @@ class Ray_cast
         Ray_cast(){};
         ~Ray_cast(){};
         const double view_angle=60;
-        double ox,oy,angle=0,View_Limitation=15;
+        double ox,oy,angle=0,View_Limitation=100;
         double h=3;//chieu cao camera
 };
 typedef Ray_cast TheRay_cast;
