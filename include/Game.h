@@ -27,6 +27,7 @@ public:
     bool running() { return m_bRunning; }
     int getMap(int x,int y) {if(y>=0&&y<maps.size()&&x>=0&&x<maps[0].size()) return maps[y][x]; else return 1;}
     SDL_Renderer* getRenderer() {return m_pRenderer;}
+    bool stop(){return pause;}
 private:
     static Game* m_pGame;
     Game(){};
@@ -38,7 +39,7 @@ private:
     TTF_Font *gFont;
     SDL_Window* m_pWindow;
     SDL_Renderer* m_pRenderer;
-    bool m_bRunning;
+    bool m_bRunning,pause,tmp=true;
 };
 typedef Game TheGame;
 #endif // GAME_H

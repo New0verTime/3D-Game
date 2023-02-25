@@ -34,6 +34,8 @@ void movingObject::RenderObject(){
     }
 }
 void movingObject::go(){
+    if(TheGame::Instance()->stop()) time=SDL_GetTicks();
+    else{
     double speed=velocity*(SDL_GetTicks()-time);
     if(Game::Instance()->getMap( int((x+lx*speed*std::cos(angle/57.2958)/4)) , int(y) )==0)
     x+=lx*speed*std::cos(angle/57.2958)/4;
@@ -42,4 +44,8 @@ void movingObject::go(){
     y+=ly*speed*std::sin(angle/57.2958)/4;
     else ly=-ly;
     time=SDL_GetTicks();
+    }
+}
+void movingObject::handleCollide(){
+    if(dist<atk_range&&SDL_GetTicks()>damage_cooldown+cd) {ThePlayer::Instance()->setHealth(damage); damage_cooldown=SDL_GetTicks(); }
 }

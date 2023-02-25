@@ -35,7 +35,7 @@ void Ray_cast::render(){
             double lx=std::cos(i/57.295779)*View_Limitation+ox,ly=std::sin(i/57.295779)*View_Limitation+oy,x1=lx,y1=ly,x2=lx,y2=ly;
             if(lx>ox){
             for(double j=std::ceil(ox);j<=int(lx);++j){
-                drawFloor(ox,oy,j,oy+(j-ox)*std::tan(i/57.295779),i-(angle-view_angle/2));
+                if(!TheGame::Instance()->stop())drawFloor(ox,oy,j,oy+(j-ox)*std::tan(i/57.295779),i-(angle-view_angle/2));
                 if(TheGame::Instance()->getMap((int)j,int(oy+(j-ox)*std::tan(i/57.295779)))){
                     type=TheGame::Instance()->getMap((int)j,int(oy+(j-ox)*std::tan(i/57.295779)));
                     x1=j;
@@ -46,7 +46,7 @@ void Ray_cast::render(){
             }
             else if(lx<ox){
             for(double j=int(ox);j>=std::ceil(lx);--j){
-                drawFloor(ox,oy,j,oy+(j-ox)*std::tan(i/57.295779),i-(angle-view_angle/2));
+                if(!TheGame::Instance()->stop())drawFloor(ox,oy,j,oy+(j-ox)*std::tan(i/57.295779),i-(angle-view_angle/2));
                 if(TheGame::Instance()->getMap((int)(j-1),int(oy+(j-ox)*std::tan(i/57.295779)))){
                     type=TheGame::Instance()->getMap((int)(j-1),int(oy+(j-ox)*std::tan(i/57.295779)));
                     x1=j;
@@ -57,7 +57,7 @@ void Ray_cast::render(){
             }
             if(ly>oy){
             for(double j=std::ceil(oy);j<=int(ly);++j){
-                drawFloor(ox,oy,ox+(j-oy)/std::tan(i/57.295779),j,i-(angle-view_angle/2));
+                if(!TheGame::Instance()->stop())drawFloor(ox,oy,ox+(j-oy)/std::tan(i/57.295779),j,i-(angle-view_angle/2));
                 if(TheGame::Instance()->getMap(int(ox+(j-oy)/std::tan(i/57.295779)),(int)j)){
                     type2=TheGame::Instance()->getMap(int(ox+(j-oy)/std::tan(i/57.295779)),(int)j);
                     x2=ox+(j-oy)/std::tan(i/57.295779);
@@ -68,7 +68,7 @@ void Ray_cast::render(){
             }
             else if(ly<oy){
             for(double j=int(oy);j>=std::ceil(ly);--j){
-                drawFloor(ox,oy,ox+(j-oy)/std::tan(i/57.295779),j,i-(angle-view_angle/2));
+                if(!TheGame::Instance()->stop())drawFloor(ox,oy,ox+(j-oy)/std::tan(i/57.295779),j,i-(angle-view_angle/2));
                 if(TheGame::Instance()->getMap(int(ox+(j-oy)/std::tan(i/57.295779)),(int)(j-1))){
                     type2=TheGame::Instance()->getMap(int(ox+(j-oy)/std::tan(i/57.295779)),(int)(j-1));
                     x2=ox+(j-oy)/std::tan(i/57.295779);
@@ -78,12 +78,13 @@ void Ray_cast::render(){
             }
             }
             if((x1-x2)*(x1-ox)<0){
-                    drawWall(ox,oy,x1,y1,i-(angle-view_angle/2),0,type);
-                    SDL_RenderDrawLine(TheGame::Instance()->getRenderer(),x1*20,y1*20,ox*20,oy*20);
+                    if(TheGame::Instance()->stop()) SDL_RenderDrawLine(TheGame::Instance()->getRenderer(),x1*20,y1*20,ox*20,oy*20);
+                    else drawWall(ox,oy,x1,y1,i-(angle-view_angle/2),0,type);
                     ray_info[int(10*(i-angle+view_angle/2))]=x1;
             }
-            else {drawWall(ox,oy,x2,y2,i-(angle-view_angle/2),1,type2);
-                SDL_RenderDrawLine(TheGame::Instance()->getRenderer(),x2*20,y2*20,ox*20,oy*20);
+            else {
+                  if(TheGame::Instance()->stop()) SDL_RenderDrawLine(TheGame::Instance()->getRenderer(),x2*20,y2*20,ox*20,oy*20);
+                  else drawWall(ox,oy,x2,y2,i-(angle-view_angle/2),1,type2);
                   ray_info[int(10*(i-angle+view_angle/2))]=x2;
             }
         }

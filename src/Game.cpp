@@ -33,7 +33,7 @@ SDL_Texture* Game::str_to_texture(std::string str){
     return textTexture;
 }
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, int flags)
-{
+{   pause=false;
     if(SDL_Init(SDL_INIT_EVERYTHING) == 0)
     {
     std::cout << "SDL init success\n";
@@ -73,11 +73,21 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
     TheTextureManager::Instance()->load("assets/4.png","4",m_pRenderer);
     TheTextureManager::Instance()->load("assets/5.png","5",m_pRenderer);
     TheTextureManager::Instance()->load("assets/6.png","6",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/heart.png","heart",m_pRenderer);
     TheTextureManager::Instance()->load("assets/mrb.png","mrb",m_pRenderer);
     TheTextureManager::Instance()->load("assets/sky.png","sky",m_pRenderer);
-// cau hoi tai sao khi lam nhu the nay lai loi? StaticObject Test_Object(2,2,"1"); m_pObj.push_back(&Test_Object) lai sai?
+    TheTextureManager::Instance()->load("assets/gameover.png","gameover",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/win.png","win",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/sung.png","sung",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/sung ban.png","sung ban",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/crosshair.png","crosshair",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/guide.png","guide",m_pRenderer);
     StaticObject* Test_Object =new StaticObject(2.0,2.0,"5",720,1.5);
-    movingObject* Test_Object2 =new movingObject(2.0,2.0,"mrb",720,1.5,0.01);
+    movingObject* Test_Object2 =new movingObject(2.0,2.0,"mrb",720,1.5,0.01,1,1000,1);
+    for(int w=1;w<3;++w){
+        movingObject* test= new movingObject(w*w,w*w,"mrb",720,1.5,0.01,1,1000,1);
+        m_pObj2.push_back(test);
+    }
     m_pObj.push_back(Test_Object);
     m_pObj2.push_back(Test_Object2);
     std::cout << "init success\n";
@@ -86,9 +96,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
 void Game::render()
 {
 SDL_RenderClear(m_pRenderer);
-//TheTextureManager::Instance()->draw("sky",0,0,1280,360,m_pRenderer);
-Player::Instance()->render(m_pRenderer);
+if(pause==false) TheTextureManager::Instance()->draw("sky",0,0,1280,360,m_pRenderer);
 TheRay_cast::Instance()->render();
+if(pause==false){
 int l=m_pObj.size();
 for(int i=0;i<l;++i){
     m_pObj[i]->getInfo();
@@ -100,17 +110,92 @@ for(int i=0;i<l;++i){
     m_pObj2[i]->RenderObject();
 
 }
+}
+const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL );
+    if( currentKeyStates[ SDL_SCANCODE_M ] ){
+        pause=true;
+        int u=maps.size(),v=maps[0].size();
+        SDL_SetRenderDrawColor(m_pRenderer,255,255,255,255);
+        for(int i=0;i<v;++i){
+            for(int j=0;j<u;++j){
+                if(maps[j][i]){
+                SDL_Rect Rect;
+                Rect.x=i*20;
+                Rect.y=j*20;
+                Rect.h=20;
+                Rect.w=20;
+                SDL_RenderDrawRect(m_pRenderer,&Rect);}
+            }
+        }
+        SDL_SetRenderDrawColor(m_pRenderer,0,0,0,255);
+    }
+    else pause=false;
+        SDL_Rect Rect;
+        Rect.x=600;
+        Rect.y=300;
+        Rect.h=450;
+        Rect.w=680;
+    if( currentKeyStates[ SDL_SCANCODE_J ] ){
+        SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("sung ban"),NULL,&Rect);
+        int l=m_pObj2.size();
+        for(int i=l-1;i>=0;--i)
+        if(m_pObj2[i]->get_angle()<=33&&m_pObj2[i]->get_angle()>=25){m_pObj2.erase(m_pObj2.begin()+i);}
+
+    }
+    else{
+        SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("sung"),NULL,&Rect);
+    }
+    Rect.x=600;
+    Rect.y=325;
+    Rect.h=40;
+    Rect.w=50;
+    SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("crosshair"),NULL,&Rect);
+for(int i=0;i<ThePlayer::Instance()->getHealth();++i){
+    SDL_Rect Rect;
+    Rect.x=40*i;
+    Rect.y=700;
+    Rect.w=30;
+    Rect.h=30;
+    SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("heart"),NULL,&Rect);
+}
 SDL_RenderPresent(m_pRenderer);
 }
 void Game::handleEvents()
 {
-    SDL_Event event;
-    if(SDL_PollEvent(&event))
+    SDL_Event e;
+    while(tmp==true){
+       SDL_RenderClear(m_pRenderer);
+       SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("guide"),NULL,NULL);
+       SDL_RenderPresent(m_pRenderer);
+    if(SDL_PollEvent(&e))
         {
-    switch (event.type)
+    switch (e.type)
         {
         case SDL_QUIT:
         m_bRunning = false;
+        break;
+        case SDL_KEYDOWN:
+        {
+            if(e.key.keysym.sym==SDLK_p) tmp=false;
+        }
+        break;
+        default:
+        break;
+            }
+        }
+    }
+// chi co chua moi biet toi dang viet cai j :)))))))))  p/s: den day xong game roi :3
+    if(SDL_PollEvent(&e))
+        {
+    switch (e.type)
+        {
+        case SDL_QUIT:
+        m_bRunning = false;
+        break;
+        case SDL_KEYDOWN:
+        {
+            if(e.key.keysym.sym==SDLK_p) tmp=false;
+        }
         break;
         default:
         break;
@@ -128,8 +213,24 @@ void Game::clean()
 }
 void Game::update()
 {
+if (ThePlayer::Instance()->getHealth()==0){
+SDL_RenderClear(m_pRenderer);
+SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("gameover"),NULL,NULL);
+SDL_RenderPresent(m_pRenderer);
+SDL_Delay(5000);
+m_bRunning=false;
+}
 Player::Instance()->update();
 int l=m_pObj2.size();
-for(int i=0;i<l;++i)
+if (l==0){
+SDL_RenderClear(m_pRenderer);
+SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("win"),NULL,NULL);
+SDL_RenderPresent(m_pRenderer);
+SDL_Delay(5000);
+m_bRunning=false;
+}
+for(int i=0;i<l;++i){
     m_pObj2[i]->go();
+    m_pObj2[i]->handleCollide();
+}
 }

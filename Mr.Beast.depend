@@ -1,9 +1,11 @@
 # depslib dependency file v1.0
-1677163467 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\main.cpp
+1677335572 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\main.cpp
 	<SDL.h>
+	"TextureManager.h"
 	"Game.h"
+	<iostream>
 
-1677286907 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
+1677335813 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
 	"SDL.h"
 	"SDL_ttf.h"
 	"map.h"
@@ -22,7 +24,7 @@
 	<SDL.h>
 	<map>
 
-1677287453 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
+1677336187 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
 	"Game.h"
 	"Player.h"
 	"TextureManager.h"
@@ -49,7 +51,7 @@
 1677092611 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\player.cpp
 	"Player.h"
 
-1677260790 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
+1677334775 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
 	"TextureManager.h"
 	"Game.h"
 	<iostream>
@@ -57,7 +59,7 @@
 	<math.h>
 	<SDL.h>
 
-1677271559 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
+1677316686 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
 	"Ray_cast.h"
 	"TextureManager.h"
 	<iostream>
@@ -81,13 +83,13 @@
 	<string>
 	<iostream>
 
-1677288089 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\movingobject.h
+1677333818 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\movingobject.h
 	<SDL.h>
 	<string>
 	<iostream>
 	<math.h>
 
-1677288142 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\movingobject.cpp
+1677321795 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\movingobject.cpp
 	"movingObject.h"
 	"Player.h"
 	"Ray_cast.h"

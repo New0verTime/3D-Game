@@ -20,6 +20,8 @@ class Player
     double getPosx() {return posx;}
     double getPosy() {return posy;}
     double getAngle() {return angle;}
+    void setHealth(int damage) {health-=damage;}
+    double getHealth(){return health;}
     void render(SDL_Renderer* mr){
         TheTextureManager::Instance()->draw("Player",posx,posy,pWidth,pHeight,mr,SDL_FLIP_NONE,angle);
     }
@@ -28,6 +30,7 @@ class Player
         int speed=Player_speed*(SDL_GetTicks()-time);
         //std::sin(x);
         //std::cos(x);
+        if(!TheGame::Instance()->stop()){
         const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL );
             if( currentKeyStates[ SDL_SCANCODE_UP ] || currentKeyStates[ SDL_SCANCODE_W ] ){
 				    if(TheGame::Instance()->getMap( int((posx+speed*std::cos(angle/57.2958)/3)/50.0) , int(posy/50.0) )==0)
@@ -64,10 +67,12 @@ class Player
 					posy-=speed*std::sin((angle-90)/57.2958)/3;
             }
         time=SDL_GetTicks();
+        }
+        else time=SDL_GetTicks();
     }
     private:
-    int pWidth=1,pHeight=1;
-    double posx=56,posy=56,angle=std::sqrt(2),Player_speed=1,time=SDL_GetTicks(); // angle=srqt2 se giup tranh goc 90 do trong viec tinh tan, cot
+    int pWidth=1,pHeight=1,health=5;
+    double posx=56,posy=56,angle=std::sqrt(2),Player_speed=1,time=SDL_GetTicks(),cooldown=0; // angle=srqt2 se giup tranh goc 90 do trong viec tinh tan, cot
     static Player* m_pPlayer;
     Player(){};
     ~Player(){};
