@@ -30,38 +30,38 @@ class Player
         //std::cos(x);
         const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL );
             if( currentKeyStates[ SDL_SCANCODE_UP ] || currentKeyStates[ SDL_SCANCODE_W ] ){
-				    if(TheGame::Instance()->getMap( int((posx+speed*std::cos(angle/57.2958)/2)/50.0) , int(posy/50.0) )==0)
-					posx+=speed*std::cos(angle/57.2958)/2;
-				    if(TheGame::Instance()->getMap( int(posx/50.0) , int((posy+speed*std::sin(angle/57.2958)/2)/50.0) )==0)
-					posy+=speed*std::sin(angle/57.2958)/2;
+				    if(TheGame::Instance()->getMap( int((posx+speed*std::cos(angle/57.2958)/3)/50.0) , int(posy/50.0) )==0)
+					posx+=speed*std::cos(angle/57.2958)/3;
+				    if(TheGame::Instance()->getMap( int(posx/50.0) , int((posy+speed*std::sin(angle/57.2958)/3)/50.0) )==0)
+					posy+=speed*std::sin(angle/57.2958)/3;
 				}
             else if( currentKeyStates[ SDL_SCANCODE_DOWN ] || currentKeyStates[ SDL_SCANCODE_S ] ){
-				    if(TheGame::Instance()->getMap( int((posx-speed*std::cos(angle/57.2958)/2)/50.0) , int(posy/50.0) )==0)
-					posx-=speed*std::cos(angle/57.2958)/2;
-				    if(TheGame::Instance()->getMap( int(posx/50.0) , int((posy-speed*std::sin(angle/57.2958)/2)/50.0) )==0)
-					posy-=speed*std::sin(angle/57.2958)/2;
+				    if(TheGame::Instance()->getMap( int((posx-speed*std::cos(angle/57.2958)/3)/50.0) , int(posy/50.0) )==0)
+					posx-=speed*std::cos(angle/57.2958)/3;
+				    if(TheGame::Instance()->getMap( int(posx/50.0) , int((posy-speed*std::sin(angle/57.2958)/3)/50.0) )==0)
+					posy-=speed*std::sin(angle/57.2958)/3;
 				}
             if( currentKeyStates[ SDL_SCANCODE_LEFT ] ||currentKeyStates[ SDL_SCANCODE_Q ])
 				{
-					angle-=3;
-					if(angle>180) angle-=360;
+					angle-=2.5;
+					if(angle<-180) angle+=360;
 				}
             else if( currentKeyStates[ SDL_SCANCODE_RIGHT ] || currentKeyStates[ SDL_SCANCODE_E ] )
 				{
-					if(angle<-180) angle+=360;
-					angle+=3;
+					if(angle>180) angle-=360;
+					angle+=2.5;
 				}
             if(currentKeyStates[ SDL_SCANCODE_A ]){
-                    if(TheGame::Instance()->getMap( int((posx-speed*std::cos((angle+90)/57.2958)/2)/50.0) , int(posy/50.0) )==0)
-					posx-=speed*std::cos((angle+90)/57.2958)/2;
-				    if(TheGame::Instance()->getMap( int(posx/50.0) , int((posy-speed*std::sin((angle+90)/57.2958)/2)/50.0) )==0)
-					posy-=speed*std::sin((angle+90)/57.2958)/2;
+                    if(TheGame::Instance()->getMap( int((posx-speed*std::cos((angle+90)/57.2958)/3)/50.0) , int(posy/50.0) )==0)
+					posx-=speed*std::cos((angle+90)/57.2958)/3;
+				    if(TheGame::Instance()->getMap( int(posx/50.0) , int((posy-speed*std::sin((angle+90)/57.2958)/3)/50.0) )==0)
+					posy-=speed*std::sin((angle+90)/57.2958)/3;
             }
             else if(currentKeyStates[ SDL_SCANCODE_D ]){
-                    if(TheGame::Instance()->getMap( int((posx-speed*std::cos((angle-90)/57.2958)/2)/50.0) , int(posy/50.0) )==0)
-					posx-=speed*std::cos((angle-90)/57.2958)/2;
-				    if(TheGame::Instance()->getMap( int(posx/50.0) , int((posy-speed*std::sin((angle-90)/57.2958)/2)/50.0) )==0)
-					posy-=speed*std::sin((angle-90)/57.2958)/2;
+                    if(TheGame::Instance()->getMap( int((posx-speed*std::cos((angle-90)/57.2958)/3)/50.0) , int(posy/50.0) )==0)
+					posx-=speed*std::cos((angle-90)/57.2958)/3;
+				    if(TheGame::Instance()->getMap( int(posx/50.0) , int((posy-speed*std::sin((angle-90)/57.2958)/3)/50.0) )==0)
+					posy-=speed*std::sin((angle-90)/57.2958)/3;
             }
         time=SDL_GetTicks();
     }

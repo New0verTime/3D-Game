@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "Player.h"
 #include "TextureManager.h"
+#include "StaticObject.h"
 #include "Ray_cast.h"
 #include <SDL_ttf.h>
 #include<iostream>
@@ -10,6 +11,7 @@
 #include<vector>
 Game* Game::m_pGame = 0;
 void Read_map(std::string path,std::vector<std::vector<int>> &maps){
+    maps.clear();
     std::ifstream myfile;
     std::string line;
     myfile.open(path,std::ios::in);
@@ -70,18 +72,34 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
     TheTextureManager::Instance()->load("assets/3.png","3",m_pRenderer);
     TheTextureManager::Instance()->load("assets/4.png","4",m_pRenderer);
     TheTextureManager::Instance()->load("assets/5.png","5",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/6.png","6",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/mrb.png","mrb",m_pRenderer);
     TheTextureManager::Instance()->load("assets/sky.png","sky",m_pRenderer);
+// cau hoi tai sao khi lam nhu the nay lai loi? StaticObject Test_Object(2,2,"1"); m_pObj.push_back(&Test_Object) lai sai?
+    StaticObject* Test_Object =new StaticObject(2.0,2.0,"5",720,1.5);
+    movingObject* Test_Object2 =new movingObject(2.0,2.0,"mrb",720,1.5,0.01);
+    m_pObj.push_back(Test_Object);
+    m_pObj2.push_back(Test_Object2);
     std::cout << "init success\n";
     return true;
 }
 void Game::render()
 {
 SDL_RenderClear(m_pRenderer);
-TheTextureManager::Instance()->draw("sky",0,0,1280,360,m_pRenderer);
-SDL_SetRenderDrawColor(m_pRenderer, 0, 255, 255, 255);
-SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 255);
+//TheTextureManager::Instance()->draw("sky",0,0,1280,360,m_pRenderer);
 Player::Instance()->render(m_pRenderer);
-TheRay_cast::Instance()->update();
+TheRay_cast::Instance()->render();
+int l=m_pObj.size();
+for(int i=0;i<l;++i){
+    m_pObj[i]->getInfo();
+    m_pObj[i]->RenderObject();
+}
+l=m_pObj2.size();
+for(int i=0;i<l;++i){
+    m_pObj2[i]->getInfo();
+    m_pObj2[i]->RenderObject();
+
+}
 SDL_RenderPresent(m_pRenderer);
 }
 void Game::handleEvents()
@@ -111,4 +129,7 @@ void Game::clean()
 void Game::update()
 {
 Player::Instance()->update();
+int l=m_pObj2.size();
+for(int i=0;i<l;++i)
+    m_pObj2[i]->go();
 }

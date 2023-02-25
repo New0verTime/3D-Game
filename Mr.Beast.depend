@@ -3,10 +3,12 @@
 	<SDL.h>
 	"Game.h"
 
-1677221631 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
+1677286907 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
 	"SDL.h"
 	"SDL_ttf.h"
 	"map.h"
+	"StaticObject.h"
+	"movingObject.h"
 	<string>
 	<vector>
 
@@ -20,10 +22,11 @@
 	<SDL.h>
 	<map>
 
-1677223712 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
+1677287453 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
 	"Game.h"
 	"Player.h"
 	"TextureManager.h"
+	"StaticObject.h"
 	"Ray_cast.h"
 	<SDL_ttf.h>
 	<iostream>
@@ -46,7 +49,7 @@
 1677092611 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\player.cpp
 	"Player.h"
 
-1677220126 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
+1677260790 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
 	"TextureManager.h"
 	"Game.h"
 	<iostream>
@@ -54,14 +57,42 @@
 	<math.h>
 	<SDL.h>
 
-1677224257 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
+1677271559 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
 	"Ray_cast.h"
 	"TextureManager.h"
 	<iostream>
 
-1677221853 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\ray_cast.h
+1677245841 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\ray_cast.h
 	<SDL.h>
 	"Player.h"
 	"Game.h"
 	<iostream>
+
+1677288186 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\staticobject.cpp
+	"StaticObject.h"
+	"Player.h"
+	"Ray_cast.h"
+	<string>
+	<iostream>
+	"Game.h"
+	<math.h>
+
+1677285186 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\staticobject.h
+	<string>
+	<iostream>
+
+1677288089 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\movingobject.h
+	<SDL.h>
+	<string>
+	<iostream>
+	<math.h>
+
+1677288142 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\movingobject.cpp
+	"movingObject.h"
+	"Player.h"
+	"Ray_cast.h"
+	<string>
+	<iostream>
+	"Game.h"
+	<math.h>
 

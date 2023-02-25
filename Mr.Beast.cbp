@@ -50,14 +50,16 @@
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/Ray_cast.h" />
+		<Unit filename="include/StaticObject.h" />
 		<Unit filename="include/TextureManager.h" />
-		<Unit filename="include/map.h" />
+		<Unit filename="include/movingObject.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Ray_cast.cpp" />
+		<Unit filename="src/StaticObject.cpp" />
 		<Unit filename="src/TextureManager.cpp" />
-		<Unit filename="src/map.cpp" />
+		<Unit filename="src/movingObject.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

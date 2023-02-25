@@ -3,6 +3,8 @@
 #include "SDL.h"
 #include "SDL_ttf.h"
 #include "map.h"
+#include"StaticObject.h"
+#include"movingObject.h"
 #include <string>
 #include <vector>
 class Game
@@ -30,6 +32,8 @@ private:
     Game(){};
     ~Game(){};
     std::vector<std::vector<int>> maps; //30*20 map
+    std::vector<StaticObject*> m_pObj;
+    std::vector<movingObject*> m_pObj2;
     int score=0;
     TTF_Font *gFont;
     SDL_Window* m_pWindow;
