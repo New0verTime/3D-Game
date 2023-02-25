@@ -21,6 +21,7 @@ public:
     bool init(const char* title, int xpos, int ypos, int width, int height, int flags);
     void render();
     void update();
+    void playMusic();
     void handleEvents();
     SDL_Texture* str_to_texture(std::string str);
     void clean();

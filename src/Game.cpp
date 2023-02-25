@@ -4,12 +4,14 @@
 #include "StaticObject.h"
 #include "Ray_cast.h"
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 #include<iostream>
 #include<cstdlib>
 #include<string>
 #include<fstream>
 #include<vector>
 Game* Game::m_pGame = 0;
+Mix_Music *gMusic = NULL;
 void Read_map(std::string path,std::vector<std::vector<int>> &maps){
     maps.clear();
     std::ifstream myfile;
@@ -63,6 +65,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
     std::cout << "SDL init fail\n";
     return false; // SDL init fail
         }
+    Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 );
+    gMusic = Mix_LoadMUS( "assets/beast.mp3" );
     m_bRunning = true;
     TTF_Init();
     gFont = TTF_OpenFont( "Raleway-Medium.ttf", 28 );
@@ -162,6 +166,7 @@ SDL_RenderPresent(m_pRenderer);
 }
 void Game::handleEvents()
 {
+
     SDL_Event e;
     while(tmp==true){
        SDL_RenderClear(m_pRenderer);
@@ -233,4 +238,8 @@ for(int i=0;i<l;++i){
     m_pObj2[i]->go();
     m_pObj2[i]->handleCollide();
 }
+}
+void Game::playMusic(){
+    if( Mix_PlayingMusic() == 0)
+    Mix_PlayMusic( gMusic, -1 );
 }

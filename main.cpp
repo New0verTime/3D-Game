@@ -10,6 +10,7 @@ while(TheGame::Instance()->running())
     TheGame::Instance()->handleEvents();
     TheGame::Instance()->update();
     TheGame::Instance()->render();
+    TheGame::Instance()->playMusic();
 }
 TheGame::Instance()->clean();
 return 0;

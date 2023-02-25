@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1677335572 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\main.cpp
+1677337627 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\main.cpp
 	<SDL.h>
 	"TextureManager.h"
 	"Game.h"
 	<iostream>
 
-1677335813 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
+1677337627 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
 	"SDL.h"
 	"SDL_ttf.h"
 	"map.h"
@@ -24,13 +24,14 @@
 	<SDL.h>
 	<map>
 
-1677336187 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
+1677337685 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
 	"Game.h"
 	"Player.h"
 	"TextureManager.h"
 	"StaticObject.h"
 	"Ray_cast.h"
 	<SDL_ttf.h>
+	<SDL_mixer.h>
 	<iostream>
 	<cstdlib>
 	<string>
