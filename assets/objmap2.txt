@@ -1,0 +1,35 @@
+1 62 2 1 1 0 1 3 56 56 11 11
+2 2 2 1 1 0 1 7 9 10 8
+Phong
+3
+3 2
+Co le thu thach lan nay la phai vuot qua me cung
+Co rat nhieu cach de vuot qua me cung
+Tuy nhien ban nen tu thu suc truoc
+Ok
+2 
+Khong
+2 
+1 2
+Ban co muon nghe huong dan khong?
+Ok
+4 
+Khong
+2 
+3 2
+Co mot cach rat hay giup ban thoat khoi me cung
+Do la cach "Bam bo tuong"
+Ban chi can bam vao 1 bo tuong va di chuyen la xong
+Thank you
+2 
+Ok
+2 
+
+2 5 9 1 1 0 1 13
+Quan
+1
+1 1
+Cam on ban rat nhieu
+Ok
+0 
+

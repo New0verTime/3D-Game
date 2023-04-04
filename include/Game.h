@@ -3,8 +3,7 @@
 #include "SDL.h"
 #include "SDL_ttf.h"
 #include "map.h"
-#include"StaticObject.h"
-#include"movingObject.h"
+#include"Object.h"
 #include <string>
 #include <vector>
 class Game
@@ -21,26 +20,33 @@ public:
     bool init(const char* title, int xpos, int ypos, int width, int height, int flags);
     void render();
     void update();
-    void playMusic();
     void handleEvents();
     SDL_Texture* str_to_texture(std::string str);
+    void Load_map(std::string map_name,double px,double py,double angle);
     void clean();
+    void HandleConversation();
     bool running() { return m_bRunning; }
-    int getMap(int x,int y) {if(y>=0&&y<maps.size()&&x>=0&&x<maps[0].size()) return maps[y][x]; else return 1;}
-    SDL_Renderer* getRenderer() {return m_pRenderer;}
-    bool stop(){return pause;}
+    int getMap(int x,int y) {if(y>=0&&y<maps.size()&&x>=0&&x<maps[0].size()) return maps[y][x]; else return 0;}
+    void setMap(int x,int y) { maps[x][y]=0; }
+    void setcollect() { ++collected; }
+    SDL_Renderer* getRenderer() { return m_pRenderer; }
 private:
     static Game* m_pGame;
     Game(){};
     ~Game(){};
-    std::vector<std::vector<int>> maps; //30*20 map
-    std::vector<StaticObject*> m_pObj;
-    std::vector<movingObject*> m_pObj2;
-    int score=0;
+    SDL_Rect Rect;
+    bool menu=true,talking=false;
+    int menu_list=0;
+    std::vector<std::vector<int>> maps;
+    std::vector<Object*> obj_map;
+    int collected;
+    std::string name,log;
+    char k;
     TTF_Font *gFont;
     SDL_Window* m_pWindow;
     SDL_Renderer* m_pRenderer;
-    bool m_bRunning,pause,tmp=true;
+    SDL_Texture* bg;
+    bool m_bRunning;
 };
 typedef Game TheGame;
 #endif // GAME_H

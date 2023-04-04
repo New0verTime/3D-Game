@@ -1,0 +1,154 @@
+2 22 10 1 1 0 1 16
+May tinh
+9
+1 9
+Ban hay chon so dau tien
+So 1
+2 
+So 2
+2 
+So 3
+4 
+So 4
+2 
+So 5
+2 
+So 6
+2 
+So 7
+2 
+So 8
+2 
+So 9
+2 
+1 9
+Ban hay chon so thu 2
+So 1
+6 
+So 2
+6 
+So 3
+6 
+So 4
+6 
+So 5
+6 
+So 6
+6 
+So 7
+6 
+So 8
+6 
+So 9
+6 
+1 9
+Ban hay chon so thu 2
+So 1
+6 
+So 2
+8 
+So 3
+6 
+So 4
+6 
+So 5
+6 
+So 6
+6 
+So 7
+6 
+So 8
+6 
+So 9
+6 
+1 9
+Ban hay chon so thu 3
+So 1
+10 
+So 2
+10 
+So 3
+10 
+So 4
+10 
+So 5
+10 
+So 6
+10 
+So 7
+10 
+So 8
+10 
+So 9
+10 
+1 9
+Ban hay chon so thu 3
+So 1
+12 
+So 2
+10 
+So 3
+10 
+So 4
+10 
+So 5
+10 
+So 6
+10 
+So 7
+10 
+So 8
+10 
+So 9
+10 
+1 9
+Ban hay chon so thu 4
+So 1
+14 
+So 2
+14 
+So 3
+14 
+So 4
+14 
+So 5
+14 
+So 6
+14 
+So 7
+14 
+So 8
+14 
+So 9
+14 
+1 9
+Ban hay chon so thu 4
+So 1
+16 
+So 2
+14 
+So 3
+14 
+So 4
+14 
+So 5
+14 
+So 6
+14 
+So 7
+14 
+So 8
+14 
+So 9
+14 
+1 1
+Mat khau sai! Vui long chon lai
+Ok
+0 
+1 2
+Mat khau dung!
+Ok
+14387 
+Ko
+0 
+1 25 9 1 1 0 1 0 56 56 11 11

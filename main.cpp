@@ -1,17 +1,14 @@
 #include<SDL.h>
-#include"TextureManager.h"
 #include"Game.h"
-#include<iostream>
 int main(int argc, char* argv[])
 {
-    TheGame::Instance()->init("Chapter 1", 50, 50, 1280, 750, 0);
+TheGame::Instance()->init("3D Game", 50, 50, 1280, 720, 0); // khoi tao
 while(TheGame::Instance()->running())
 {
-    TheGame::Instance()->handleEvents();
-    TheGame::Instance()->update();
-    TheGame::Instance()->render();
-    TheGame::Instance()->playMusic();
+    TheGame::Instance()->handleEvents(); // cap nhat thong tin tu ban phim
+    TheGame::Instance()->update(); // cap nhat trang thai cac vat the
+    TheGame::Instance()->render(); // hien thi hinh anh
 }
-TheGame::Instance()->clean();
+TheGame::Instance()->clean(); // xoa game
 return 0;
 }

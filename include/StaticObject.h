@@ -1,23 +1,13 @@
 #ifndef STATICOBJECT_H
 #define STATICOBJECT_H
+#include "Object.h"
 #include <string>
 #include<iostream>
-class StaticObject
+#include<SDL.h>
+class StaticObject: public Object
 {
-    std::string id;
-    double x,y,dist,delta_angle;
-    bool inside;
-    double obj_Width,obj_Height;
     public:
-        StaticObject(double _x,double _y,std::string _id,double _obj_Width,double _obj_Height){
-            x=_x;
-            y=_y;
-            id=_id;
-            obj_Width=_obj_Width;
-            obj_Height=_obj_Height;
-        }
-        ~StaticObject(){}
-        void getInfo();
-        void RenderObject();
+        StaticObject(double _x,double _y,std::vector<std::string> k,double _obj_Width,double _obj_Height,double _lim=1,double _obj_angle=0);
+        virtual ~StaticObject(){}
 };
 #endif // STATICOBJECT_H

@@ -3,7 +3,7 @@
 #include<string>
 TextureManager* TextureManager::s_pInstance = 0;
 bool TextureManager::load(std::string fileName, std::string id, SDL_Renderer* pRenderer)
-{
+{   if(m_textureMap[id] !=0) return true;
     SDL_Surface* pTempSurface = IMG_Load(fileName.c_str());
     if(pTempSurface == 0)
     {

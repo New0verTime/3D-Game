@@ -1,16 +1,12 @@
 # depslib dependency file v1.0
-1677337627 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\main.cpp
+1677163467 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\main.cpp
 	<SDL.h>
-	"TextureManager.h"
 	"Game.h"
-	<iostream>
 
-1677337627 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
+1677221631 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
 	"SDL.h"
 	"SDL_ttf.h"
 	"map.h"
-	"StaticObject.h"
-	"movingObject.h"
 	<string>
 	<vector>
 
@@ -24,14 +20,12 @@
 	<SDL.h>
 	<map>
 
-1677337685 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
+1677223712 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
 	"Game.h"
 	"Player.h"
 	"TextureManager.h"
-	"StaticObject.h"
 	"Ray_cast.h"
 	<SDL_ttf.h>
-	<SDL_mixer.h>
 	<iostream>
 	<cstdlib>
 	<string>
@@ -52,7 +46,7 @@
 1677092611 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\player.cpp
 	"Player.h"
 
-1677334775 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
+1677220126 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
 	"TextureManager.h"
 	"Game.h"
 	<iostream>
@@ -60,42 +54,284 @@
 	<math.h>
 	<SDL.h>
 
-1677316686 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
+1677224257 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
 	"Ray_cast.h"
 	"TextureManager.h"
 	<iostream>
 
-1677245841 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\ray_cast.h
+1677221853 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\ray_cast.h
 	<SDL.h>
 	"Player.h"
 	"Game.h"
 	<iostream>
 
-1677288186 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\staticobject.cpp
+1680524098 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\main.cpp
+	<SDL.h>
+	"Game.h"
+
+1680524447 c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\game.h
+	"SDL.h"
+	"SDL_ttf.h"
+	"map.h"
+	"Object.h"
+	<string>
+	<vector>
+
+1677224870 c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\map.h
+	<iostream>
+	<vector>
+	<string>
+
+1680569838 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\game.cpp
+	"Game.h"
+	"Ray_cast.h"
+	"Player.h"
+	"TextureManager.h"
 	"StaticObject.h"
-	"Player.h"
-	"Ray_cast.h"
-	<string>
+	"Collectable.h"
+	"NPC.h"
+	"Teleport.h"
+	"Object.h"
+	<SDL_ttf.h>
 	<iostream>
+	<cstdlib>
+	<string>
+	<fstream>
+	<vector>
+	<algorithm>
+
+1678995649 c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\player.h
+	"TextureManager.h"
 	"Game.h"
-	<math.h>
-
-1677285186 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\staticobject.h
-	<string>
+	"Ray_cast.h"
 	<iostream>
-
-1677333818 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\movingobject.h
+	<string>
+	<math.h>
 	<SDL.h>
+
+1678995637 c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\texturemanager.h
+	<string>
+	<SDL.h>
+	<map>
+
+1680560442 c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\ray_cast.h
+	<SDL.h>
+	"Player.h"
+	"Game.h"
+	<iostream>
+
+1677224870 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\map.cpp
+	"map.h"
+	<iostream>
+	<fstream>
+	<string>
+
+1678993300 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\player.cpp
+	"Player.h"
+
+1680576254 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\ray_cast.cpp
+	"Ray_cast.h"
+	"TextureManager.h"
+	<iostream>
+
+1678986301 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\texturemanager.cpp
+	"TextureManager.h"
+	<SDL_image.h>
+	<string>
+
+1678206573 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\staticobject.cpp
+	"StaticObject.h"
+	"Ray_cast.h"
+
+1678994643 c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\staticobject.h
+	"Object.h"
 	<string>
 	<iostream>
-	<math.h>
+	<SDL.h>
 
-1677321795 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\movingobject.cpp
-	"movingObject.h"
+1680524098 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\main.cpp
+	<SDL.h>
+	"Game.h"
+
+1680524447 c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\game.h
+	"SDL.h"
+	"SDL_ttf.h"
+	"map.h"
+	"Object.h"
+	<string>
+	<vector>
+
+1677224870 c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\map.h
+	<iostream>
+	<vector>
+	<string>
+
+1678994643 c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\staticobject.h
+	"Object.h"
+	<string>
+	<iostream>
+	<SDL.h>
+
+1678289984 c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\object.h
+	<string>
+	<iostream>
+	<vector>
+
+1680569838 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\game.cpp
+	"Game.h"
+	"Ray_cast.h"
+	"Player.h"
+	"TextureManager.h"
+	"StaticObject.h"
+	"Collectable.h"
+	"NPC.h"
+	"Teleport.h"
+	"Object.h"
+	<SDL_ttf.h>
+	<iostream>
+	<cstdlib>
+	<string>
+	<fstream>
+	<vector>
+	<algorithm>
+
+1678995649 c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\player.h
+	"TextureManager.h"
+	"Game.h"
+	"Ray_cast.h"
+	<iostream>
+	<string>
+	<math.h>
+	<SDL.h>
+
+1678995637 c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\texturemanager.h
+	<string>
+	<SDL.h>
+	<map>
+
+1680560442 c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\ray_cast.h
+	<SDL.h>
+	"Player.h"
+	"Game.h"
+	<iostream>
+
+1677224870 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\map.cpp
+	"map.h"
+	<iostream>
+	<fstream>
+	<string>
+
+1678993300 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\player.cpp
+	"Player.h"
+
+1680576254 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\ray_cast.cpp
+	"Ray_cast.h"
+	"TextureManager.h"
+	<iostream>
+
+1678986301 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\texturemanager.cpp
+	"TextureManager.h"
+	<SDL_image.h>
+	<string>
+
+1678206573 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\staticobject.cpp
+	"StaticObject.h"
+	"Ray_cast.h"
+
+1678287598 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\object.cpp
+	"Object.h"
 	"Player.h"
 	"Ray_cast.h"
 	<string>
 	<iostream>
 	"Game.h"
 	<math.h>
+
+1678289984 c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\object.h
+	<string>
+	<iostream>
+	<vector>
+
+1678287598 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\object.cpp
+	"Object.h"
+	"Player.h"
+	"Ray_cast.h"
+	<string>
+	<iostream>
+	"Game.h"
+	<math.h>
+
+1678040406 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\movingobject.cpp
+	"MovingObject.h"
+	"Ray_cast.h"
+
+1678072430 c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\movingobject.h
+	"Teleport.h"
+	<string>
+	<iostream>
+	<SDL.h>
+
+1678287651 c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\teleport.h
+	"Object.h"
+	<string>
+	<iostream>
+	"Game.h"
+	<SDL.h>
+	<vector>
+
+1678958735 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\teleport.cpp
+	"Teleport.h"
+	"Ray_cast.h"
+
+1680437275 c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\npc.h
+	"Object.h"
+	<string>
+	<iostream>
+	<SDL.h>
+
+1680573442 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\npc.cpp
+	"NPC.h"
+	"Ray_cast.h"
+
+1680432212 source:c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\collectable.cpp
+	"Collectable.h"
+	"Ray_cast.h"
+
+1678878041 c:\users\quan\desktop\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\collectable.h
+	"Object.h"
+	<string>
+	<iostream>
+	<SDL.h>
+
+1680432212 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\collectable.cpp
+	"Collectable.h"
+	"Ray_cast.h"
+
+1678878041 c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\collectable.h
+	"Object.h"
+	<string>
+	<iostream>
+	<SDL.h>
+
+1680437275 c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\npc.h
+	"Object.h"
+	<string>
+	<iostream>
+	<SDL.h>
+
+1678287651 c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\include\teleport.h
+	"Object.h"
+	<string>
+	<iostream>
+	"Game.h"
+	<SDL.h>
+	<vector>
+
+1680573442 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\npc.cpp
+	"NPC.h"
+	"Ray_cast.h"
+
+1678958735 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\teleport.cpp
+	"Teleport.h"
+	"Ray_cast.h"
 
