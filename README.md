@@ -1,2 +1,2 @@
-# Mr.Beast
-Mr.Beast horror game using SDL :D
+# 3d Game
+3d Game game using SDL :D
