@@ -50,12 +50,12 @@
 		<Unit filename="include/Collectable.h" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/NPC.h" />
+		<Unit filename="include/Object.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/Ray_cast.h" />
 		<Unit filename="include/StaticObject.h" />
 		<Unit filename="include/Teleport.h" />
 		<Unit filename="include/TextureManager.h" />
-		<Unit filename="include/map.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Collectable.cpp" />
 		<Unit filename="src/Game.cpp" />
@@ -66,7 +66,6 @@
 		<Unit filename="src/StaticObject.cpp" />
 		<Unit filename="src/Teleport.cpp" />
 		<Unit filename="src/TextureManager.cpp" />
-		<Unit filename="src/map.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

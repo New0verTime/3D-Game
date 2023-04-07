@@ -1,4 +1,4 @@
-1 24 3 1 1 0 1 1 56 56 11 11
+1 14 3 1 1 0 1 5 556 556 11 11
 2 3 3 1 1 0 1 7 9 10 8
 Phong
 3
@@ -30,8 +30,8 @@ Cam on ban rat nhieu
 Ok
 0 
 
-2 16 5 1 1 0 1 13
-Quan
+2 16 5 1 1 0 1 24
+Demon
 9
 1 9
 Ban hay chon so dau tien

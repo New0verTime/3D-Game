@@ -16,7 +16,7 @@ void Teleport::getInfo(){
     }
     double player_angle=ThePlayer::Instance()->getAngle()-30;
     if(player_angle<-180) player_angle+=360;
-    double theta=std::atan((oy-y) / (ox-x)) *(180/3.14159265) ; // -90 to 90    std::atan(obj_Width/(3*dist)) *(180/3.14159265)
+    double theta=std::atan((oy-y) / (ox-x)) *(57.295779) ; // -90 to 90    std::atan(obj_Width/(3*dist)) *(180/3.14159265)
     if (ox>x) {
         theta+=180;
     }
@@ -30,7 +30,7 @@ void Teleport::getInfo(){
     tmp+=360+tmp2/2;
     if(tmp>360) tmp-=360;
     id_num=int(tmp/tmp2);
-    epsilon=std::min(std::atan(obj_Width/(dist)) *(180/3.14159265),60.0);
+    epsilon=std::min(std::atan(obj_Width/(dist)) *(57.295779),60.0);
     if(delta_angle-epsilon<60||delta_angle+epsilon>360)  inside=true;
     else inside=false;
 }

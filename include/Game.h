@@ -2,7 +2,6 @@
 #define GAME_H
 #include "SDL.h"
 #include "SDL_ttf.h"
-#include "map.h"
 #include"Object.h"
 #include <string>
 #include <vector>
@@ -37,6 +36,7 @@ private:
     SDL_Rect Rect;
     bool menu=true,talking=false;
     int menu_list=0;
+    double prev;
     std::vector<std::vector<int>> maps;
     std::vector<Object*> obj_map;
     int collected;

@@ -1,6 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include"TextureManager.h"
+#include"SDL_mixer.h"
 #include"Game.h"
 #include"Ray_cast.h"
 #include<iostream>
@@ -35,21 +36,13 @@ class Player
 					posx+=c;
 					if (int ((posx-c)/50.0)!=int(posx/50.0)){
                         int a=TheGame::Instance()->getMap(int(posx/50.0) , int(posy/50.0));
-                        if(!(a&3072)&&a)
-                            posx-=c;
-                        else if(c>0&&a&1024)
-                            posx-=c;
-                        else if(c<0&&TheGame::Instance()->getMap(int( (posx-c) /50.0) , int(posy/50.0))&1024)
+                        if ( (!(a&3072)&&a)|| (c>0&&a&1024) || ((c<0&&TheGame::Instance()->getMap(int( (posx-c) /50.0) , int(posy/50.0))&1024)) )
                             posx-=c;
                     }
 					posy+=s;
 					if(int((posy-s)/50.0)!=int(posy/50.0)){
                         int a=TheGame::Instance()->getMap(int(posx/50.0) , int(posy/50.0));
-                        if(!(a&3072)&&a)
-                            posy-=s;
-                        else if(s>0&&a&2048)
-                            posy-=s;
-                        else if(s<0&&TheGame::Instance()->getMap(int( posx /50.0) , int( (posy-s) /50.0))&2048)
+                        if  ( (!(a&3072)&&a) ||(s>0&&a&2048) ||(s<0&&TheGame::Instance()->getMap(int( posx /50.0) , int( (posy-s) /50.0))&2048))
                             posy-=s;
                     }
 				}
@@ -57,28 +50,20 @@ class Player
 					posx-=c;
 					if (int ((posx+c)/50.0)!=int(posx/50.0)){
                         int a=TheGame::Instance()->getMap(int(posx/50.0) , int(posy/50.0));
-                        if(!(a&3072)&&a)
-                            posx+=c;
-                        else if(c<0&&a&1024)
-                            posx+=c;
-                        else if(c>0&&TheGame::Instance()->getMap(int( (posx+c) /50.0) , int(posy/50.0))&1024)
+                        if( (!(a&3072)&&a)||(c<0&&a&1024)||(c>0&&TheGame::Instance()->getMap(int( (posx+c) /50.0) , int(posy/50.0))&1024) )
                             posx+=c;
                     }
 					posy-=s;
 					if(int((posy+s)/50.0)!=int(posy/50.0)){
                         int a=TheGame::Instance()->getMap(int(posx/50.0) , int(posy/50.0));
-                        if(!(a&3072)&&a)
-                            posy+=s;
-                        else if(s<0&&a&2048)
-                            posy+=s;
-                        else if(s>0&&TheGame::Instance()->getMap(int( posx /50.0) , int( (posy+s) /50.0))&2048)
+                        if ( (!(a&3072)&&a) || (s<0&&a&2048) || (s>0&&TheGame::Instance()->getMap(int( posx /50.0) , int( (posy+s) /50.0))&2048) )
                             posy+=s;
                     }
 				}
             if( currentKeyStates[ SDL_SCANCODE_LEFT ] ||currentKeyStates[ SDL_SCANCODE_Q ])
 				{
+                    if(angle<-180) angle+=360;
 					angle-=3;
-					if(angle<-180) angle+=360;
 				}
             else if( currentKeyStates[ SDL_SCANCODE_RIGHT ] || currentKeyStates[ SDL_SCANCODE_E ] )
 				{
@@ -89,21 +74,13 @@ class Player
 					posx+=s;
 					if(int((posx-s)/50.0)!=int(posx/50.0)){
                         int a=TheGame::Instance()->getMap(int(posx/50.0) , int(posy/50.0));
-                        if(!(a&3072)&&a)
-                            posx-=s;
-                        else if(s>0&&a&1024)
-                            posx-=s;
-                        else if(s<0&&TheGame::Instance()->getMap(int( (posx-s) /50.0) , int( (posy) /50.0))&1024)
+                        if( (!(a&3072)&&a) || (s>0&&a&1024) || (s<0&&TheGame::Instance()->getMap(int( (posx-s) /50.0) , int( (posy) /50.0))&1024) )
                             posx-=s;
                     }
 					posy-=c;
 					if (int ((posy+c)/50.0)!=int(posy/50.0)){
                         int a=TheGame::Instance()->getMap(int(posx/50.0) , int(posy/50.0));
-                        if(!(a&3072)&&a)
-                            posy+=c;
-                        else if(c<0&&a&2048)
-                            posy+=c;
-                        else if(c>0&&TheGame::Instance()->getMap(int( (posx) /50.0) , int( (posy+c) /50.0))&2048)
+                        if ( (!(a&3072)&&a) || (c<0&&a&2048) || (c>0&&TheGame::Instance()->getMap(int( (posx) /50.0) , int( (posy+c) /50.0))&2048) )
                             posy+=c;
                     }
             }
@@ -111,21 +88,13 @@ class Player
 					posx-=s;
 					if(int((posx+s)/50.0)!=int(posx/50.0)){
                         int a=TheGame::Instance()->getMap(int(posx/50.0) , int(posy/50.0));
-                        if(!(a&3072)&&a)
-                            posx+=s;
-                        else if(s<0&&a&1024)
-                            posx+=s;
-                        else if(s>0&&TheGame::Instance()->getMap(int( (posx+s) /50.0) , int( (posy) /50.0))&1024)
+                        if( (!(a&3072)&&a) || (s<0&&a&1024) || (s>0&&TheGame::Instance()->getMap(int( (posx+s) /50.0) , int( (posy) /50.0))&1024) )
                             posx+=s;
                     }
 					posy+=c;
 					if (int ((posy-c)/50.0)!=int(posy/50.0)){
                         int a=TheGame::Instance()->getMap(int(posx/50.0) , int(posy/50.0));
-                        if(!(a&3072)&&a)
-                            posy-=c;
-                        else if(c>0&&(a&2048))
-                            posy-=c;
-                        else if(c<0&&TheGame::Instance()->getMap(int( (posx) /50.0) , int( (posy-c)/50.0))&2048)
+                        if( (!(a&3072)&&a) || (c>0&&(a&2048)) || (c<0&&TheGame::Instance()->getMap(int( (posx) /50.0) , int( (posy-c)/50.0))&2048) )
                             posy-=c;
                     }
             }
@@ -133,7 +102,7 @@ class Player
     }
     private:
     int pWidth=1,pHeight=1;
-    double posx=56,posy=56,angle=std::sqrt(2),Player_speed=0.3,time=SDL_GetTicks(); // angle=srqt2 se giup tranh goc 90 do trong viec tinh tan, cot
+    double posx=56,posy=56,angle=1.414,Player_speed=0.3,time=SDL_GetTicks(); // angle=srqt2 se giup tranh goc 90 do trong viec tinh tan, cot
     static Player* m_pPlayer;
     Player(){};
     ~Player(){};

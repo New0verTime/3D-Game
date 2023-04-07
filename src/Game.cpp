@@ -8,12 +8,16 @@
 #include "Teleport.h"
 #include "Object.h"
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 #include<iostream>
 #include<cstdlib>
 #include<string>
 #include<fstream>
 #include<vector>
 #include<algorithm>
+Mix_Music *gMusic = NULL;
+Mix_Music *menuMusic=NULL;
+Mix_Chunk *footstep=NULL;
 int tam=0;
 SDL_Rect R,R2;
 Game* Game::m_pGame = 0;
@@ -212,6 +216,14 @@ void Game::Load_map(std::string map_name,double px,double py,double angle){
     TheTextureManager::Instance()->load("assets/sky.png","sky",m_pRenderer);
     bg=TheTextureManager::Instance()->getTexture("sky");
     ThePlayer::Instance()->setTime();
+    Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 );
+    std::string tmpp = "assets/music"+map_name+".mp3";
+    const char* k= tmpp.c_str();
+    Mix_FreeMusic( gMusic );
+    gMusic = NULL;
+    gMusic = Mix_LoadMUS(k);
+    delete k;
+    //    Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 );
 }
 SDL_Texture* Game::str_to_texture(std::string str){
     SDL_Surface* textSurface = TTF_RenderText_Solid( gFont, str.c_str(), {255,255,255} );
@@ -269,11 +281,14 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
     TheTextureManager::Instance()->load("assets/3d.png","3d",m_pRenderer);
     TheTextureManager::Instance()->load("assets/guide.png","guide",m_pRenderer);
     TheTextureManager::Instance()->load("assets/guide1.png","guide1",m_pRenderer);
+    menuMusic = Mix_LoadMUS("assets/music.mp3");
     return true;
 }
 void Game::render()
 {
 if(!menu){
+if( Mix_PlayingMusic() == 0)
+Mix_PlayMusic( gMusic, -1 );
 SDL_RenderClear(m_pRenderer);
 SDL_SetRenderDrawColor(m_pRenderer,150,150,150,255);
 R.y=360;
@@ -353,6 +368,8 @@ k=0;
 SDL_RenderPresent(m_pRenderer);
 }
 else{
+if( Mix_PlayingMusic() == 0)
+Mix_PlayMusic( menuMusic, -1 );
     if(menu_list==3){
         SDL_RenderClear(m_pRenderer);
         SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("guide1"),NULL,NULL);
@@ -362,7 +379,7 @@ else{
     SDL_RenderClear(m_pRenderer);
     Rect.x=150;
     Rect.y=100;
-    Rect.h=200;
+    Rect.h=300;
     Rect.w=980;
     SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("3d"),NULL,&Rect);
     Rect.x=500;
@@ -372,12 +389,12 @@ else{
     SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("play"),NULL,&Rect);
     Rect.x=500;
     Rect.y=475;
-    Rect.h=70;
+    Rect.h=100;
     Rect.w=280;
     SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("guide"),NULL,&Rect);
     Rect.x=500;
     Rect.y=550;
-    Rect.h=70;
+    Rect.h=100;
     Rect.w=280;
     SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("quit"),NULL,&Rect);
     Rect.x=300;
@@ -460,7 +477,7 @@ void Game::handleEvents()
             }
             else if(event.key.keysym.sym==SDLK_RETURN){
                 if(menu){
-                if(menu_list==0) menu=false;
+                if(menu_list==0) {menu=false;    Mix_FreeMusic( menuMusic ); menuMusic = NULL;}
                 else if(menu_list==1) menu_list=3;
                 else if(menu_list==2) m_bRunning = false;
                 }

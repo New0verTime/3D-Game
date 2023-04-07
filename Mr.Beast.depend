@@ -1,65 +1,77 @@
 # depslib dependency file v1.0
-1677163467 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\main.cpp
+1680778173 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\main.cpp
 	<SDL.h>
 	"Game.h"
 
-1677221631 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
+1680789522 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
 	"SDL.h"
 	"SDL_ttf.h"
-	"map.h"
+	"Object.h"
 	<string>
 	<vector>
 
-1677093761 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\texturemanager.cpp
+1678986301 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\texturemanager.cpp
 	"TextureManager.h"
 	<SDL_image.h>
 	<string>
 
-1677183942 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\texturemanager.h
+1678995637 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\texturemanager.h
 	<string>
 	<SDL.h>
 	<map>
 
-1677223712 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
+1680834341 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
 	"Game.h"
+	"Ray_cast.h"
 	"Player.h"
 	"TextureManager.h"
-	"Ray_cast.h"
+	"StaticObject.h"
+	"Collectable.h"
+	"NPC.h"
+	"Teleport.h"
+	"Object.h"
 	<SDL_ttf.h>
+	<SDL_mixer.h>
 	<iostream>
 	<cstdlib>
 	<string>
 	<fstream>
 	<vector>
+	<algorithm>
 
-1677085788 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\map.h
+1677224870 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\map.h
 	<iostream>
 	<vector>
 	<string>
 
-1677223450 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\map.cpp
+1677224870 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\map.cpp
 	"map.h"
 	<iostream>
 	<fstream>
 	<string>
 
-1677092611 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\player.cpp
+1678993300 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\player.cpp
 	"Player.h"
 
-1677220126 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
+1680789221 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
 	"TextureManager.h"
+	"SDL_mixer.h"
 	"Game.h"
+	"Ray_cast.h"
 	<iostream>
 	<string>
 	<math.h>
 	<SDL.h>
 
-1677224257 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
+1680784315 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
 	"Ray_cast.h"
 	"TextureManager.h"
+	"SDL.h"
 	<iostream>
+	<algorithm>
+	<math.h>
 
-1677221853 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\ray_cast.h
+1680779505 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\ray_cast.h
 	<SDL.h>
 	"Player.h"
 	"Game.h"
@@ -334,4 +346,70 @@
 1678958735 source:c:\users\quan\desktop\new folder\mr.beast-27ded62ad964227ff62b5b88d20beb6d684e8f04\src\teleport.cpp
 	"Teleport.h"
 	"Ray_cast.h"
+
+1680784949 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\object.h
+	<string>
+	<iostream>
+	<vector>
+
+1680776652 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\collectable.cpp
+	"Collectable.h"
+	"Ray_cast.h"
+
+1678878041 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\collectable.h
+	"Object.h"
+	<string>
+	<iostream>
+	<SDL.h>
+
+1678994643 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\staticobject.h
+	"Object.h"
+	<string>
+	<iostream>
+	<SDL.h>
+
+1680437275 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\npc.h
+	"Object.h"
+	<string>
+	<iostream>
+	<SDL.h>
+
+1680744541 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\teleport.h
+	"Object.h"
+	<string>
+	<iostream>
+	"Game.h"
+	<SDL.h>
+	<vector>
+
+1680573442 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\npc.cpp
+	"NPC.h"
+	"Ray_cast.h"
+
+1680784966 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\object.cpp
+	"Object.h"
+	"Player.h"
+	"Ray_cast.h"
+	<string>
+	<iostream>
+	"Game.h"
+	<math.h>
+
+1678206573 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\staticobject.cpp
+	"StaticObject.h"
+	"Ray_cast.h"
+
+1680776777 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\teleport.cpp
+	"Teleport.h"
+	"Ray_cast.h"
+
+1680774991 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\enemy.cpp
+	"Enemy.h"
+	"Ray_cast.h"
+
+1680775355 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\enemy.h
+	"Object.h"
+	<string>
+	<iostream>
+	<SDL.h>
 
