@@ -9,15 +9,15 @@ bool sortt(info lhs, info rhs) {
     return fabs(lhs.getx())>fabs(rhs.getx());
 }
 void Ray_cast::casting(double x0,double y0, double x1, double y1,double a,bool b,int type){
-    int length=(type&896)>>7;
+    int length=((type&896)>>7) +1;
     type=type%128;
-    double x=720*(length+1)/(std::sqrt((x1-x0)*(x1-x0)+(y1-y0)*(y1-y0))*std::cos((30-a)/57.295779));
-    Rect.x=int((1280*a)/60);
-    Rect.y=int(360-x);
-    Rect.h=int(x)+int(x/(length+1));
+    double x=(720*length)/(std::sqrt((x1-x0)*(x1-x0)+(y1-y0)*(y1-y0))*std::cos((30-a)/57.295779));
+    Rect.x=(1280*a)/60;
+    Rect.y=360-x;
+    Rect.h=int(x)+int(x/length);
     if(b==0)
-    Rect2.x=int((y1-int(y1))*341)*3;
-    else Rect2.x=int((x1-int(x1))*341)*3;
+    Rect2.x=(y1-int(y1))*1024;
+    else Rect2.x=(x1-int(x1))*1024;
     SDL_RenderCopy(TheGame::Instance()->getRenderer(),TheTextureManager::Instance()->getTexture(std::to_string(type)),&Rect2,&Rect);
 }
 

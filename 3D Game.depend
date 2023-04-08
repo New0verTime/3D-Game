@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1680778173 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\main.cpp
+1680931544 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\main.cpp
 	<SDL.h>
 	"Game.h"
 
@@ -101,7 +101,7 @@
 1678993300 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\player.cpp
 	"Player.h"
 
-1680883171 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
+1680950931 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
 	"Ray_cast.h"
 	"TextureManager.h"
 	"SDL.h"
