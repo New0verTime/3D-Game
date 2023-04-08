@@ -17,7 +17,7 @@ void Collectable::getInfo(){
     if(delta_angle<0) delta_angle+=360;
     double tmp=ThePlayer::Instance()->getAngle()+delta_angle-30-obj_angle;
     if(tmp>180) tmp-=360;
-    if(tmp<-180) tmp+=360;
+    else if(tmp<-180) tmp+=360;
     double tmp2=360.0/id_max;
     tmp+=360+tmp2/2;
     if(tmp>360) tmp-=360;

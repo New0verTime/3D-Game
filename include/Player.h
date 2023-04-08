@@ -101,8 +101,8 @@ class Player
         time=SDL_GetTicks();
     }
     private:
-    int pWidth=1,pHeight=1;
     double posx=56,posy=56,angle=1.414,Player_speed=0.3,time=SDL_GetTicks(); // angle=srqt2 se giup tranh goc 90 do trong viec tinh tan, cot
+    int pWidth=1,pHeight=1;
     static Player* m_pPlayer;
     Player(){};
     ~Player(){};

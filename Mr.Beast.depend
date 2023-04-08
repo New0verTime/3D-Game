@@ -3,7 +3,7 @@
 	<SDL.h>
 	"Game.h"
 
-1680789522 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
+1680884100 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\game.h
 	"SDL.h"
 	"SDL_ttf.h"
 	"Object.h"
@@ -20,7 +20,7 @@
 	<SDL.h>
 	<map>
 
-1680834341 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
+1680884744 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\game.cpp
 	"Game.h"
 	"Ray_cast.h"
 	"Player.h"
@@ -53,7 +53,7 @@
 1678993300 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\player.cpp
 	"Player.h"
 
-1680789221 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
+1680882462 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\player.h
 	"TextureManager.h"
 	"SDL_mixer.h"
 	"Game.h"
@@ -63,7 +63,7 @@
 	<math.h>
 	<SDL.h>
 
-1680784315 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
+1680883171 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\ray_cast.cpp
 	"Ray_cast.h"
 	"TextureManager.h"
 	"SDL.h"
@@ -352,7 +352,7 @@
 	<iostream>
 	<vector>
 
-1680776652 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\collectable.cpp
+1680882979 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\collectable.cpp
 	"Collectable.h"
 	"Ray_cast.h"
 
@@ -368,7 +368,7 @@
 	<iostream>
 	<SDL.h>
 
-1680437275 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\npc.h
+1680885150 c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\include\npc.h
 	"Object.h"
 	<string>
 	<iostream>
@@ -386,7 +386,7 @@
 	"NPC.h"
 	"Ray_cast.h"
 
-1680784966 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\object.cpp
+1680882462 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\object.cpp
 	"Object.h"
 	"Player.h"
 	"Ray_cast.h"
@@ -399,7 +399,7 @@
 	"StaticObject.h"
 	"Ray_cast.h"
 
-1680776777 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\teleport.cpp
+1680882462 source:c:\users\quan\desktop\sdl-game-development-main\new folder\mr.beast\src\teleport.cpp
 	"Teleport.h"
 	"Ray_cast.h"
 

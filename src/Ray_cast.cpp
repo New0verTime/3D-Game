@@ -41,7 +41,7 @@ void Ray_cast::update(){
             for(double j=int(lx);j>=std::ceil(ox);--j){
                 //drawFloor(ox,oy,j,oy+(j-ox)*std::tan(i/57.295779),i-(angle-view_angle/2));
                 int k=TheGame::Instance()->getMap((int)j,int(oy+(j-ox)*t));
-                if( k && !(k&3072) ){
+                if( !(k&3072) && k  ){
                     type=k;
                     x1=j;
                     y1=(j-ox)*t;
@@ -49,7 +49,7 @@ void Ray_cast::update(){
                     info noww(x1-ox,y1,type,0);
                     tmp.push_back(noww);
                 }
-                else if(k&&(k&1024)){
+                else if((k&1024)&&k){
                     type=k;
                     x1=j;
                     y1=(j-ox)*t;
@@ -63,7 +63,7 @@ void Ray_cast::update(){
             for(double j=std::ceil(lx);j<=int(ox);++j){
                 //drawFloor(ox,oy,j,oy+(j-ox)*std::tan(i/57.295779),i-(angle-view_angle/2));
                 int k=TheGame::Instance()->getMap((int)(j-1),int(oy+(j-ox)*t));
-                if( k &&!(k&3072)){
+                if( !(k&3072) && k){
                     type=k;
                     x1=j;
                     y1=(j-ox)*t;
@@ -72,7 +72,7 @@ void Ray_cast::update(){
                     tmp.push_back(noww);
                 }
                 int k2=TheGame::Instance()->getMap((int)(j),int(oy+(j-ox)*t));
-                if(k2&&(k2&1024)){
+                if((k2&1024)&&k2){
                     type=k2;
                     x1=j;
                     y1=(j-ox)*t;
@@ -86,7 +86,7 @@ void Ray_cast::update(){
             for(double j=int(ly);j>=std::ceil(oy);--j){
                 //drawFloor(ox,oy,ox+(j-oy)/std::tan(i/57.295779),j,i-(angle-view_angle/2));
                 int k=TheGame::Instance()->getMap(int(ox+(j-oy)/t),(int)j);
-                if( k &&!(k&3072) ){
+                if( !(k&3072)&&k  ){
                     type2=k;
                     x2=(j-oy)/t;
                     y2=j;
@@ -94,7 +94,7 @@ void Ray_cast::update(){
                     info noww(x2,y2-oy,type2,1);
                     tmp.push_back(noww);
                 }
-                else if(k&& (k&2048)){
+                else if( (k&2048)&&k){
                     type2=k;
                     x2=(j-oy)/t;
                     y2=j;
@@ -108,7 +108,7 @@ void Ray_cast::update(){
             for(double j=std::ceil(ly);j<=int(oy);++j){
                 //drawFloor(ox,oy,ox+(j-oy)/std::tan(i/57.295779),j,i-(angle-view_angle/2));
                 int k=TheGame::Instance()->getMap(int(ox+(j-oy)/t),(int)(j-1));
-                if( k&&!(k&3072) ){
+                if( !(k&3072)&&k ){
                     type2=k;
                     x2=(j-oy)/t;
                     y2=j;
@@ -117,7 +117,7 @@ void Ray_cast::update(){
                     tmp.push_back(noww);
                 }
                 int k2=TheGame::Instance()->getMap(int(ox+(j-oy)/t),(int)(j));
-                if(k2&&(k2&2048)){
+                if((k2&2048)&&k2){
                     type2=k2;
                     x2=(j-oy)/t;
                     y2=j;

@@ -33,20 +33,17 @@ private:
     static Game* m_pGame;
     Game(){};
     ~Game(){};
-    SDL_Rect Rect;
-    bool menu=true,talking=false;
-    int menu_list=0;
-    double prev;
-    std::vector<std::vector<int>> maps;
-    std::vector<Object*> obj_map;
-    int collected;
-    std::string name,log;
-    char k;
+    SDL_Rect R1,R2,R3,R4,R5,Rect,Rect1,Rect2;
     TTF_Font *gFont;
     SDL_Window* m_pWindow;
     SDL_Renderer* m_pRenderer;
     SDL_Texture* bg;
-    bool m_bRunning;
+    std::vector<std::vector<int>> maps;
+    std::vector<Object*> obj_map;
+    std::string name,log;
+    int collected,menu_list=0;
+    char k;
+    bool menu=true,talking=false,m_bRunning;
 };
 typedef Game TheGame;
 #endif // GAME_H

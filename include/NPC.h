@@ -19,9 +19,9 @@ class Status
 };
 class NPC: public Object
 {   private:
+    std::vector<Status*> status;
     std::string name,log;
     short status_now=0,sentence_now=0;
-    std::vector<Status*> status;
     bool talking=false;
     public:
         NPC(double _x,double _y,std::vector<std::string>_id,double _obj_Width,double _obj_Height,std::string _name,std::vector<Status*> _status,double _lim=1,double _obj_object=0);

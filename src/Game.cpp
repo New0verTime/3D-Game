@@ -19,10 +19,9 @@ Mix_Music *gMusic = NULL;
 Mix_Music *menuMusic=NULL;
 Mix_Chunk *footstep=NULL;
 int tam=0;
-SDL_Rect R,R2;
 Game* Game::m_pGame = 0;
 bool sorter(Object* lhs, Object* rhs) {
-    return lhs->get_dist()>rhs->get_dist();
+    return lhs->get_dist() > rhs->get_dist();
 }
 void Read_map(std::string path,std::vector<std::vector<int>> &maps,SDL_Renderer* gRenderer){
     maps.clear();
@@ -266,14 +265,33 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
     TTF_Init();
     gFont = TTF_OpenFont( "Raleway-Medium.ttf", 28 );
     Load_map("0",56.0,56.0,0);
-    R.x=0;
-    R.y=0;
-    R.w=1280;
-    R.h=360;
+    R1.x=0;
+    R1.y=0;
+    R1.w=1280;
+    R1.h=360;
     R2.x=0;
     R2.y=0;
     R2.w=740;
     R2.h=720;
+    R3.x=1000;
+    R3.y=0;
+    R3.h=70;
+    R3.w=280;
+    R4.x=0;
+    R4.y=450;
+    R4.h=100;
+    R5.y=550;
+    R5.w=1280;
+    R5.h=170;
+    R5.x=0;
+    Rect1.w=300;
+    Rect1.h=70;
+    Rect1.y=640;
+    Rect1.x=470;
+    Rect2.w=400;
+    Rect2.h=70;
+    Rect2.y=640;
+    Rect2.x=450;
     std::cout << "init success\n";
     TheTextureManager::Instance()->load("assets/arrow.png","arrow",m_pRenderer);
     TheTextureManager::Instance()->load("assets/play.png","play",m_pRenderer);
@@ -291,12 +309,11 @@ if( Mix_PlayingMusic() == 0)
 Mix_PlayMusic( gMusic, -1 );
 SDL_RenderClear(m_pRenderer);
 SDL_SetRenderDrawColor(m_pRenderer,150,150,150,255);
-R.y=360;
-R.h=360;
-SDL_RenderFillRect(m_pRenderer,&R);
-R.y=0;
+R1.y=360;
+SDL_RenderFillRect(m_pRenderer,&R1);
+R1.y=0;
 R2.x=ThePlayer::Instance()->getAngle()*5+900;
-SDL_RenderCopy(m_pRenderer,bg,&R2,&R);
+SDL_RenderCopy(m_pRenderer,bg,&R2,&R1);
 TheRay_cast::Instance()->update();
 name="";
 log="";
@@ -307,59 +324,48 @@ for(int i=0;i<obj_map.size();++i){
         log=obj_map[i]->getlog(k);
     }
 }if (collected>=0) {
-    Rect.x=1000;
-    Rect.y=0;
-    Rect.h=70;
-    Rect.w=280;
     SDL_SetRenderDrawColor(m_pRenderer,0,0,0,255);
-    SDL_RenderFillRect(m_pRenderer,&Rect);
+    R3.x=1000;
+    R3.y=0;
+    SDL_RenderFillRect(m_pRenderer,&R3);
     SDL_SetRenderDrawColor(m_pRenderer,255,255,255,255);
-    SDL_RenderDrawRect(m_pRenderer,&Rect);
+    SDL_RenderDrawRect(m_pRenderer,&R3);
     SDL_Texture* tmp=str_to_texture("Collected:"+std::to_string(collected));
-    SDL_RenderCopy(m_pRenderer,tmp,NULL,&Rect);
+    SDL_RenderCopy(m_pRenderer,tmp,NULL,&R3);
     SDL_DestroyTexture(tmp); // loi con tro o day
     }
 if(name!=""&&log!=""){
     talking=true;
-    Rect.x=0;
-    Rect.y=450;
-    Rect.h=100;
-    Rect.w=25*name.size();
+    R4.w=25*name.size();
     SDL_SetRenderDrawColor(m_pRenderer,0,0,0,255);
-    SDL_RenderFillRect(m_pRenderer,&Rect);
+    SDL_RenderFillRect(m_pRenderer,&R4);
+    SDL_RenderFillRect(m_pRenderer,&R5);
     SDL_SetRenderDrawColor(m_pRenderer,255,255,255,255);
-    SDL_RenderDrawRect(m_pRenderer,&Rect);
+    SDL_RenderDrawRect(m_pRenderer,&R4);
+    SDL_RenderDrawRect(m_pRenderer,&R5);
     SDL_Texture* tmp=str_to_texture(name);
-    SDL_RenderCopy(m_pRenderer,tmp,NULL,&Rect);
-    SDL_DestroyTexture(tmp); // loi con tro o day
-    Rect.y=550;
-    Rect.w=1280;
-    Rect.h=170;
-    SDL_SetRenderDrawColor(m_pRenderer,0,0,0,255);
-    SDL_RenderFillRect(m_pRenderer,&Rect);
-    SDL_SetRenderDrawColor(m_pRenderer,255,255,255,255);
-    SDL_RenderDrawRect(m_pRenderer,&Rect);
-    Rect.w=14*log.size();
-    Rect.h=70;
+    SDL_RenderCopy(m_pRenderer,tmp,NULL,&R4);
+    SDL_DestroyTexture(tmp);
+    R3.x=0;
+    R3.y=550;
+    R3.w=14*log.size();
     SDL_Texture* tmp2=str_to_texture(log);
-    SDL_RenderCopy(m_pRenderer,tmp2,NULL,&Rect);
+    SDL_RenderCopy(m_pRenderer,tmp2,NULL,&R3);
     SDL_DestroyTexture(tmp2); // loi con tro o day
     if(name!="Player"){
-    Rect.w=300;
-    Rect.h=70;
-    Rect.y=640;
-    Rect.x=470;
+    R3.x=470;
+    R3.y=640;
+    R3.w=300;
     SDL_Texture* tmp3=str_to_texture("Press J to continue");
-    SDL_RenderCopy(m_pRenderer,tmp3,NULL,&Rect);
+    SDL_RenderCopy(m_pRenderer,tmp3,NULL,&R3);
     SDL_DestroyTexture(tmp3); // loi con tro o day
     }
     else{
-    Rect.w=400;
-    Rect.h=70;
-    Rect.y=640;
-    Rect.x=450;
+    R3.x=450;
+    R3.y=640;
+    R3.w=400;
     SDL_Texture* tmp3=str_to_texture("Press number key to answer");
-    SDL_RenderCopy(m_pRenderer,tmp3,NULL,&Rect);
+    SDL_RenderCopy(m_pRenderer,tmp3,NULL,&R3);
     SDL_DestroyTexture(tmp3); // loi con tro o day
     }
 }
@@ -500,82 +506,40 @@ void Game::handleEvents()
                     if(obj_map[i]->get_dist()<5) obj_map[i]->set_talk();
                     }
             }
-            else if(event.key.keysym.sym==SDLK_0){
-                if(talking)
+            else if(talking){
+            if(event.key.keysym.sym==SDLK_0){
                 k='0';
-                else {
-
-                }
             }
             else if(event.key.keysym.sym==SDLK_1){
-                if(talking)
                 k='1';
-                else {
-
-                }
             }
             else if(event.key.keysym.sym==SDLK_2){
-                if(talking)
                 k='2';
-                else {
-
-                }
             }
             else if(event.key.keysym.sym==SDLK_3){
-                if(talking)
                 k='3';
-                else {
-
-                }
             }
             else if(event.key.keysym.sym==SDLK_4){
-                if(talking)
                 k='4';
-                else {
-
-                }
             }
             else if(event.key.keysym.sym==SDLK_5){
-                if(talking)
                 k='5';
-                else {
-
-                }
             }
             else if(event.key.keysym.sym==SDLK_6){
-                if(talking)
                 k='6';
-                else {
-
-                }
             }
             else if(event.key.keysym.sym==SDLK_7){
-                if(talking)
                 k='7';
-                else {
-
-                }
             }
             else if(event.key.keysym.sym==SDLK_8){
-                if(talking)
                 k='8';
-                else {
-
-                }
             }
             else if(event.key.keysym.sym==SDLK_9){
-                if(talking)
                 k='9';
-                else {
-
-                }
             }
             else if(event.key.keysym.sym==SDLK_j){
-                if(talking)
                 k='j';
-                else {
-
-                }
+            }
             }
             break;
         default:
