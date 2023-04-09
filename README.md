@@ -21,7 +21,8 @@ Game bắt đầu với việc bạn gặp Phong, 1 thanh niên kỳ lạ. Khôn
 ### Codeblock
  - Yêu cầu `SDL2`, `SDL2_image`, `SDL2_mixer` và `SDL2_ttf`. (Phiên bản mới nhất)
  - Codeblock version 20.03.
- - Bạn có thể chạy file `Mr.exe` nếu việc build trong Codeblock có vấn đề.
+ - Bạn có thể chạy file `Mr.exe` nếu việc build trong Codeblock có vấn đề hoặc download từ link sau:
+ - https://drive.google.com/drive/folders/1SpVTnidhmdZceWoezKWAAsFqFHzCPPas?usp=share_link
 ## Control
  - Di chuyển sử dụng 4 phím `W`,`A`,`S`,`D`, `Q` và `E` để quay.
  - Bạn cũng có thể sử dụng các phím mũi tên.
