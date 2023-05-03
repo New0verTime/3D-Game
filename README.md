@@ -20,20 +20,22 @@ Game bắt đầu với việc bạn gặp Phong, 1 thanh niên kỳ lạ. Khôn
 ## Building and run
 ### Codeblock
  - Yêu cầu `SDL2`, `SDL2_image`, `SDL2_mixer` và `SDL2_ttf`. (Phiên bản mới nhất)
- - Codeblock version 20.03
+ - Codeblock version 20.03.
  - Bạn có thể chạy file `Mr.exe` nếu việc build trong Codeblock có vấn đề
+### Tải trực tiếp game
+ - https://drive.google.com/drive/folders/1SpVTnidhmdZceWoezKWAAsFqFHzCPPas?usp=share_link
 ## Control
  - Di chuyển sử dụng 4 phím `W`,`A`,`S`,`D`, `Q` và `E` để quay.
  - Bạn cũng có thể sử dụng các phím mũi tên.
  - 1 số cửa có thể sử dụng `P` để mở (tính năng thử nghiệm nên chưa được sử dụng trong quest).
  - Khi tiến gần 1 NPC, bạn sử dụng phím `T` để bắt chuyện với họ
- - Bấm `J` để tiếp tự cuộc hội thoại. Cuối mỗi cuộc hội thoại sẽ là 1 câu trả lời được đánh số.
+ - Bấm `J` để tiếp tục cuộc hội thoại. Cuối mỗi cuộc hội thoại sẽ là 1 câu trả lời được đánh số.
 ## Rule
  - Bạn phải giải đố để vượt qua các thử thách.
  - Mỗi map sẽ có 1 cổng dịch chuyển giúp bạn qua map mới.
  ## Credits
- - Bui Hong Quan 
- - Nguyen Dinh Tuan Anh (Họa sĩ)
+ - Bùi Hồng Quân
+ - Nguyễn Đình Tuấn Anh (Họa sĩ)
  ## Reference
  - https://lodev.org/cgtutor/
  - https://lazyfoo.net/tutorials/SDL/index.php
