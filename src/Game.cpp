@@ -222,6 +222,19 @@ void Game::Load_map(std::string map_name,double px,double py,double angle){
     gMusic = NULL;
     gMusic = Mix_LoadMUS(k);
     delete k;
+    if(map_name=="1") rain=true;
+    else rain=false;
+    if(map_name=="5") {R7.w=0,R7.h=0; jikangakakatta=(SDL_GetTicks()-gamestart)/1000;
+    if(jikangakakatta<oldHighscore){
+            std::fstream HighScoreToFile;
+            HighScoreToFile.open("assets/HighScore.txt",std::ios::out);
+            HighScoreToFile << jikangakakatta;
+            oldHighscore=jikangakakatta;
+            HighScoreToFile.close();
+    }
+            R8.y=0;
+    }
+    if(map_name=="6") {clean();}
     //    Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 );
 }
 SDL_Texture* Game::str_to_texture(std::string str){
@@ -265,6 +278,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
     TTF_Init();
     gFont = TTF_OpenFont( "Raleway-Medium.ttf", 28 );
     Load_map("0",56.0,56.0,0);
+	std::fstream HighScoreFromFile;
+	HighScoreFromFile.open("assets/HighScore.txt",std::ios::in);
+	HighScoreFromFile >> oldHighscore;
+	HighScoreFromFile.close();
     R1.x=0;
     R1.y=0;
     R1.w=1280;
@@ -299,6 +316,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
     TheTextureManager::Instance()->load("assets/3d.png","3d",m_pRenderer);
     TheTextureManager::Instance()->load("assets/guide.png","guide",m_pRenderer);
     TheTextureManager::Instance()->load("assets/guide1.png","guide1",m_pRenderer);
+    TheTextureManager::Instance()->load("assets/rain.png","rain",m_pRenderer);
     menuMusic = Mix_LoadMUS("assets/music.mp3");
     return true;
 }
@@ -371,6 +389,16 @@ if(name!=""&&log!=""){
 }
 else talking=false;
 k=0;
+if(rain){
+    R6.y=720-2*int(SDL_GetTicks())%360;
+    SDL_RenderCopy(m_pRenderer,TheTextureManager::Instance()->getTexture("rain"),&R6,NULL);
+}
+SDL_Texture* tmp3=str_to_texture("Time: "+std::to_string( int(SDL_GetTicks()-gamestart)/1000 ));
+SDL_RenderCopy(m_pRenderer,tmp3,NULL,&R7);
+SDL_DestroyTexture(tmp3); // loi con tro o day
+SDL_Texture* tmp5=str_to_texture("HighScore: "+std::to_string(oldHighscore));
+SDL_RenderCopy(m_pRenderer,tmp5,NULL,&R8);
+SDL_DestroyTexture(tmp5); // loi con tro o day
 SDL_RenderPresent(m_pRenderer);
 }
 else{
@@ -483,7 +511,7 @@ void Game::handleEvents()
             }
             else if(event.key.keysym.sym==SDLK_RETURN){
                 if(menu){
-                if(menu_list==0) {menu=false;    Mix_FreeMusic( menuMusic ); menuMusic = NULL;}
+                if(menu_list==0) {menu=false;    Mix_FreeMusic( menuMusic ); menuMusic = NULL; gamestart=SDL_GetTicks();}
                 else if(menu_list==1) menu_list=3;
                 else if(menu_list==2) m_bRunning = false;
                 }

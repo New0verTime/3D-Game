@@ -1,9 +1,7 @@
 2 22 10 1 1 0 1 16
 May tinh
 9
-3 9
-Ban hay nhap password
-mat khau la PAIN
+1 9
 Ban hay chon so dau tien
 So 1
 2 
@@ -154,3 +152,33 @@ Ok
 Ko
 0 
 1 3 9 1 1 0 1 4 56 56 11 11
+2 3 3 1 1 0 1 7 9 10 8
+Phong
+3
+3 2
+Thu thach lan nay kho day
+Quan co le van chua nghi ra cach giai
+Ban ra kia xem sao
+Ok
+2 
+Khong
+4 
+1 2
+Cam on ban nhieu
+Ok
+2 
+Khong
+4 
+1 1
+:((
+...
+4 
+2 12 5 1 1 0 1 13
+Quan
+1
+3 1
+Toi co tim duoc 1 manh giay co chu PAIN
+Co the do se la goi y de chung ta giai cau do nay
+Ban suy nghi xem
+Ok
+0 

@@ -40,7 +40,7 @@ class Ray_cast
         ~Ray_cast(){};
         const double view_angle=30;
         SDL_Rect Rect{0,0,3,0},Rect2{0,0,3,1024};
-        double ox,oy,angle=0,View_Limitation=30;
+        double ox,oy,angle=0,View_Limitation=40;
         double ray_infox[601];
         double ray_infoy[601];
 };

@@ -33,7 +33,7 @@ private:
     static Game* m_pGame;
     Game(){};
     ~Game(){};
-    SDL_Rect R1,R2,R3,R4,R5,Rect,Rect1,Rect2;
+    SDL_Rect R1,R2,R3,R4,R5,R6{0,0,1280,720},R7{0,0,300,70},R8{0,70,300,70},Rect,Rect1,Rect2;
     TTF_Font *gFont;
     SDL_Window* m_pWindow;
     SDL_Renderer* m_pRenderer;
@@ -41,9 +41,11 @@ private:
     std::vector<std::vector<int>> maps;
     std::vector<Object*> obj_map;
     std::string name,log;
+    double gamestart,jikangakakatta,oldHighscore;
     int collected,menu_list=0;
     char k;
-    bool menu=true,talking=false,m_bRunning;
+    bool menu=true,talking=false,m_bRunning,rain=false;
+
 };
 typedef Game TheGame;
 #endif // GAME_H

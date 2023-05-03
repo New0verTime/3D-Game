@@ -33,3 +33,20 @@ Cam on ban rat nhieu
 Ok
 0 
 
+2 62 3 1 1 0 1 13
+Quan
+2
+2 2
+Chung ta da vuot qua me cung roi
+Vat va qua
+Vat va qua 
+2 
+Uk 
+2 
+1 2
+Chung ta di tiep thoi
+Ok
+2 
+Khong
+2 
+ 

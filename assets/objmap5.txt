@@ -11,3 +11,13 @@
 0 10 11 1 1 0 1 50
 0 10 12 1 1 0 1 50
 0 11 12 1 1 0 1 50
+1 2 14 1 1 0 1 6 56 56 11 11
+2 3 14 1 1 0 1 7 9 10 8
+Phong
+3
+3 1
+Cuoi cung chung ta da hoan thanh thu thach
+Chao mung ban quay tro lai UET
+Cuoc hanh trinh den day la ket thuc
+Ok
+0 
