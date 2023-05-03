@@ -4,18 +4,12 @@
 #include"Player.h"
 #include"Game.h"
 #include<iostream>
-class info{
-public:
-    info(double _x1, double _y1, int _type, bool _b){x1=_x1; y1=_y1; type=_type; b=_b;}
-    double getx(){return x1;}
-    double gety(){return y1;}
-    int gettype(){return type;}
-    bool getb(){return b;}
-    ~info(){}
-private:
+struct info{
     double x1,y1;
     int type;
     bool b;
+    info(double _x1, double _y1, int _type, bool _b){x1=_x1; y1=_y1; type=_type; b=_b;}
+    ~info(){}
 };
 class Ray_cast
 {
@@ -40,7 +34,7 @@ class Ray_cast
         ~Ray_cast(){};
         const double view_angle=30;
         SDL_Rect Rect{0,0,3,0},Rect2{0,0,3,1024};
-        double ox,oy,angle=0,View_Limitation=40;
+        double ox,oy,angle=0,View_Limitation=27;
         double ray_infox[601];
         double ray_infoy[601];
 };

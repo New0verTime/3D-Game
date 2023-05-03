@@ -126,7 +126,7 @@
 	<SDL.h>
 	"Game.h"
 
-1680884100 c:\users\quan\desktop\sdl-game-development-main\mr.beast\include\game.h
+1682888727 c:\users\quan\desktop\sdl-game-development-main\mr.beast\include\game.h
 	"SDL.h"
 	"SDL_ttf.h"
 	"Object.h"
@@ -148,7 +148,7 @@
 	<iostream>
 	<SDL.h>
 
-1681299702 c:\users\quan\desktop\sdl-game-development-main\mr.beast\include\ray_cast.h
+1683103121 c:\users\quan\desktop\sdl-game-development-main\mr.beast\include\ray_cast.h
 	<SDL.h>
 	"Player.h"
 	"Game.h"
@@ -169,7 +169,7 @@
 	<SDL.h>
 	<map>
 
-1680884744 source:c:\users\quan\desktop\sdl-game-development-main\mr.beast\src\game.cpp
+1682890053 source:c:\users\quan\desktop\sdl-game-development-main\mr.beast\src\game.cpp
 	"Game.h"
 	"Ray_cast.h"
 	"Player.h"
@@ -224,7 +224,7 @@
 1678993300 source:c:\users\quan\desktop\sdl-game-development-main\mr.beast\src\player.cpp
 	"Player.h"
 
-1680953788 source:c:\users\quan\desktop\sdl-game-development-main\mr.beast\src\ray_cast.cpp
+1683101480 source:c:\users\quan\desktop\sdl-game-development-main\mr.beast\src\ray_cast.cpp
 	"Ray_cast.h"
 	"TextureManager.h"
 	"SDL.h"

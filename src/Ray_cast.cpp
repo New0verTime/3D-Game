@@ -12,9 +12,9 @@ void Ray_cast::casting(double x0,double y0, double x1, double y1,double a,bool b
     Rect.x=(1280*a)/60;
     Rect.y=360-x;
     Rect.h=int(x)+int(x/length);
-    if(b==0)
-    Rect2.x=(y1-int(y1))*1024;
-    else Rect2.x=(x1-int(x1))*1024;
+    if(b)
+    Rect2.x=(x1-int(x1))*1024;
+    else    Rect2.x=(y1-int(y1))*1024;
     SDL_RenderCopy(TheGame::Instance()->getRenderer(),TheTextureManager::Instance()->getTexture(std::to_string(type)),&Rect2,&Rect);
 }
 void drawFloor(double x0,double y0, double x1, double y1,double a){
@@ -123,16 +123,16 @@ void Ray_cast::update(){
                 }
             }
             }
-            int t1=0,t2=0;
-            while(t1<tmp1.size()&&t2<tmp2.size()){
-                if(fabs(tmp1[t1].getx())>fabs(tmp2[t2].getx()))
+            int t1=0,t2=0,tp1=tmp1.size(),tp2=tmp2.size();
+            while(t1<tp1&&t2<tp2){
+                if(fabs(tmp1[t1].x1)>fabs(tmp2[t2].x1))
                     tmp.push_back(tmp1[t1++]);
                 else tmp.push_back(tmp2[t2++]);
             }
-            while(t1<tmp1.size()) tmp.push_back(tmp1[t1++]);
-            while(t2<tmp2.size()) tmp.push_back(tmp2[t2++]);
+            while(t1<tp1) tmp.push_back(tmp1[t1++]);
+            while(t2<tp2) tmp.push_back(tmp2[t2++]);
             for(int j=0;j<tmp.size();++j){
-                casting(ox,oy,tmp[j].getx()+ox,tmp[j].gety()+oy,i-(angle-view_angle),tmp[j].getb(),tmp[j].gettype());
+                casting(ox,oy,tmp[j].x1+ox,tmp[j].y1+oy,i-(angle-view_angle),tmp[j].b,tmp[j].type);
             }
             if(x1==lx&&x2+ox==lx){
                     ray_infox[int(10*(i-angle+view_angle))]=lx;
