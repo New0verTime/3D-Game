@@ -5,11 +5,11 @@
 #include<algorithm>
 #include<math.h>
 Ray_cast* Ray_cast::m_pRay_cast = 0;
-void Ray_cast::casting(double x0,double y0, double x1, double y1,double a,bool b,int type){
+void Ray_cast::casting(double x1, double y1,double a,bool b,int type){
     int length=((type&896)>>7) +1;
     type=type%128;
-    double x=(720*length)/(std::sqrt((x1-x0)*(x1-x0)+(y1-y0)*(y1-y0))*std::cos((30-a)/57.295779));
-    Rect.x=(1280*a)/60;
+    double x=(720*length)/(std::sqrt((x1-ox)*(x1-ox)+(y1-oy)*(y1-oy))*std::cos((30-a)/57.295779));
+    Rect.x=(64*a)/3;
     Rect.y=360-x;
     Rect.h=int(x)+int(x/length);
     if(b)
@@ -132,7 +132,7 @@ void Ray_cast::update(){
             while(t1<tp1) tmp.push_back(tmp1[t1++]);
             while(t2<tp2) tmp.push_back(tmp2[t2++]);
             for(int j=0;j<tmp.size();++j){
-                casting(ox,oy,tmp[j].x1+ox,tmp[j].y1+oy,i-(angle-view_angle),tmp[j].b,tmp[j].type);
+                casting(tmp[j].x1+ox,tmp[j].y1+oy,i-(angle-view_angle),tmp[j].b,tmp[j].type);
             }
             if(x1==lx&&x2+ox==lx){
                     ray_infox[int(10*(i-angle+view_angle))]=lx;

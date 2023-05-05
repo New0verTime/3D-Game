@@ -148,7 +148,7 @@
 	<iostream>
 	<SDL.h>
 
-1683103121 c:\users\quan\desktop\sdl-game-development-main\mr.beast\include\ray_cast.h
+1683282030 c:\users\quan\desktop\sdl-game-development-main\mr.beast\include\ray_cast.h
 	<SDL.h>
 	"Player.h"
 	"Game.h"
@@ -224,7 +224,7 @@
 1678993300 source:c:\users\quan\desktop\sdl-game-development-main\mr.beast\src\player.cpp
 	"Player.h"
 
-1683101480 source:c:\users\quan\desktop\sdl-game-development-main\mr.beast\src\ray_cast.cpp
+1683281937 source:c:\users\quan\desktop\sdl-game-development-main\mr.beast\src\ray_cast.cpp
 	"Ray_cast.h"
 	"TextureManager.h"
 	"SDL.h"
